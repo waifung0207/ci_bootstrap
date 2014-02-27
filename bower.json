@@ -1,0 +1,21 @@
+{
+  "name": "CI Bootstrap",
+  "version": "0.0.1",
+  "homepage": "https://github.com/waifung0207/ci_bootstrap",
+  "authors": [
+    "Michael Chan <waifung0207@gmail.com>"
+  ],
+  "description": "Website starter template with CodeIgniter, Bootstrap and GroceryCrud",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": null,
+    "bootswatch": null
+  }
+}

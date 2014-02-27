@@ -14,7 +14,7 @@ class Layout extends CI_Hooks
         {
             // load layout (APPPATH = "applications/frontend/")
             $layout_name = $CI->mLayout;
-            $layout_path = BASEPATH . '../'.APPPATH.'views/__layouts/'.$layout_name.'.php';
+            $layout_path = BASEPATH . '../'.APPPATH.'views/_layouts/'.$layout_name.'.php';
             $layout = $CI->load->file($layout_path, true);
 
             // change string "{body}" from view output
