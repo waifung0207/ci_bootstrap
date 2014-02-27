@@ -1,0 +1,11 @@
+
+v 0.1.0
+	Add bower for third-party package management
+	Add grunt for asset pipeline management
+	Add changelog.txt for logging feature updates / bug fixes
+	Remove Bootswatch themes because they should be managed via bower instead of the repository itself
+
+v 0.0.1
+	Basic frontend / backend structure
+	Preset layout for different pages
+	Add GroceryCRUD for handling backend opertations
