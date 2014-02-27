@@ -1,0 +1,25 @@
+{
+  "name": "ci_bootstrap",
+  "version": "0.0.1",
+  "description": "Website starter template with CodeIgniter, Bootstrap and GroceryCrud",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waifung0207/ci_bootstrap"
+  },
+  "author": "Michael Chan <waifung.hk>",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-contrib-watch": "latest",
+    "grunt-phpunit": "latest"
+  }
+}

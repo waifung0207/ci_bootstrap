@@ -8,8 +8,7 @@
 
     <title>My Website - {title}</title>
 
-    <link href="<?php echo base_url("assets/css/themes/$theme/bootstrap.min.css"); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/dist/backend.min.css'); ?>" rel="stylesheet">
   </head>
   
   <body>

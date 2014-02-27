@@ -7,7 +7,7 @@
         </div><!-- /.container -->
     </footer>
 
-    <script src="<?php echo base_url('assets/dist/app.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/dist/backend.min.js'); ?>"></script>
 
   </body>
   

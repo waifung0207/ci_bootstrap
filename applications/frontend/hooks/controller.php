@@ -16,14 +16,12 @@ class Controller extends CI_Hooks
         
         // default values for page output
         $CI->mLayout = "default";
-        $CI->mTheme = "flatly";
         
         // prepare view data
         $CI->mViewData = array(
             'locale'    => $CI->mLocale,
             'ctrler'    => $CI->mCtrler,
-            'action'    => $CI->mAction,
-            'theme'     => $CI->mTheme
+            'action'    => $CI->mAction
         );
     }
 }
