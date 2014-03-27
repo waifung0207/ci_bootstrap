@@ -1,6 +1,6 @@
 ## CodeIgniter Bootstrap
 
-A website starter template that integrates CodeIgniter, Twitter Bootstrap as well as Grocery CRUD for backend content management. 
+A website starter template that integrates [CodeIgniter](http://ellislab.com/codeigniter), [Bootstrap](http://getbootstrap.com/) as well as [Grocery CRUD](http://www.grocerycrud.com/) & [Image CRUD](http://www.grocerycrud.com/image-crud) for backend content management. 
 
 ### Pre-requisites
 
@@ -25,7 +25,7 @@ Inside the terminal, change to directory where you cloned the repository.
 
 After above installation, you should be able to visit the websites via links like these:
 
-* Frontend website: http://localhost/ci_bootstrap/
-* Backend website: http://localhost/ci_bootstrap/backend.php
+* **Frontend** website: http://localhost/ci_bootstrap/
+* **Backend** website: http://localhost/ci_bootstrap/backend.php
 
 Whereas the backend website will require login (username and password: admin) before accessing the inner pages.
