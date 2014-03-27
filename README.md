@@ -19,3 +19,13 @@ Inside the terminal, change to directory where you cloned the repository.
 2. Update package.json (optional) then install grunt packages: ```npm install```
 3. Update Gruntfile.coffee (optional, which is written in CoffeeScript), then use grunt command to start preset tasks: ```grunt```
 4. After all you will find the post-processed files under the **"assets/dist"** folder, means you have successfully configured it :)
+
+
+### Usage
+
+After above installation, you should be able to visit the websites via links like these:
+
+* Frontend website: http://localhost/ci_bootstrap/
+* Backend website: http://localhost/ci_bootstrap/backend.php
+
+Whereas the backend website will require login (username and password: admin) before accessing the inner pages.
