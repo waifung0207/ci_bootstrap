@@ -6,14 +6,37 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->mLayout = "empty";
+		$this->mViewData['error_msg'] = $this->session->flashdata('error_msg');
 		$this->load->view('login', $this->mViewData);
 	}
 
 	// Submission of Login Form
 	public function post_login()
 	{
-		// check login here
-		redirect('home');
+		// authenication login here
+		if ($_POST['username']==ADMIN_USERNAME && $_POST['password']==ADMIN_PASSWORD)
+		{
+			// success
+			$user = array(
+				'fullname' => ADMIN_FULLNAME,
+				'username' => ADMIN_USERNAME
+			);
+			$this->session->set_userdata('user', $user);
+			redirect('home');
+		}
+		else
+		{
+			// failed
+			$this->session->set_flashdata('error_msg', 'Invalid Login');
+			redirect('login');
+		}
+	}
+
+	// Logout user
+	public function logout()
+	{
+		$this->session->unset_userdata('user');
+		redirect('login');
 	}
 }
 

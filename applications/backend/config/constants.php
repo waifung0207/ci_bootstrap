@@ -37,5 +37,15 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+/*
+|--------------------------------------------------------------------------
+| Custom constants
+|--------------------------------------------------------------------------
+*/
+define('ADMIN_FULLNAME',		'Administrator');
+define('ADMIN_USERNAME',		'admin');
+define('ADMIN_PASSWORD',		'admin');
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

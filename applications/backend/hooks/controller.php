@@ -14,6 +14,14 @@ class Controller extends CI_Hooks
         // load language files
         $CI->mLocale = $CI->config->item('language');
         
+        // check if user is logged in
+        $user = $CI->session->userdata('user');
+        if ( empty($user) && $CI->mCtrler!='login' )
+        {
+            redirect('login');
+            return;
+        }
+        
         // default values for page output
         $CI->mLayout = "default";
         
@@ -21,7 +29,8 @@ class Controller extends CI_Hooks
         $CI->mViewData = array(
             'locale'    => $CI->mLocale,
             'ctrler'    => $CI->mCtrler,
-            'action'    => $CI->mAction
+            'action'    => $CI->mAction,
+            'user'      => $user
         );
     }
 }
