@@ -38,8 +38,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: dir_bower
           src: [
-            'bootstrap/dist/fonts/**'
-            'font-awesome/fonts/**'
+            'AdminLTE/fonts/**'
           ]
           dest: "assets/dist/fonts/"
           flatten: true
@@ -54,9 +53,9 @@ module.exports = (grunt) ->
         files:
           "assets/dist/app.min.js" : [
             # bower files
-            dir_bower + 'jquery/dist/jquery.min.js',
-            dir_bower + 'bootstrap/dist/js/bootstrap.min.js',
-            # custom files
+            dir_bower + 'jquery/dist/jquery.min.js'
+            dir_bower + 'bootstrap/dist/js/bootstrap.min.js'
+            # (optional) custom files
             #dir_js + 'base.js'
           ]
       # uglify:backend
@@ -64,9 +63,10 @@ module.exports = (grunt) ->
         files:
           "assets/dist/backend.min.js" : [
             # bower files
-            dir_bower + 'jquery/dist/jquery.min.js',
-            dir_bower + 'bootstrap/dist/js/bootstrap.min.js',
-            # custom files
+            dir_bower + 'jquery/dist/jquery.min.js'
+            dir_bower + 'AdminLTE/js/bootstrap.min.js'
+            dir_bower + 'AdminLTE/js/jquery-ui-1.10.3.min.js'
+            # (optional) custom files
             #dir_js + 'backend.js'
           ]
 
@@ -80,17 +80,22 @@ module.exports = (grunt) ->
             # bower files
             dir_bower + 'bootstrap/dist/css/bootstrap.min.css'
             dir_bower + 'font-awesome/css/font-awesome.min.css'
-            # custom files
+            # (optional) custom files
             #dir_css + 'base.css'
           ]
       # cssmin:backend
       backend:
         files: 
           'assets/dist/backend.min.css': [
-            # bower files
-            dir_bower + 'bootstrap/dist/css/bootstrap.min.css'
-            dir_bower + 'font-awesome/css/font-awesome.min.css'
-            # custom files
+            # AdminLTE theme
+            dir_bower + 'AdminLTE/css/bootstrap.min.css'
+            dir_bower + 'AdminLTE/css/font-awesome.min.css'
+            dir_bower + 'AdminLTE/css/AdminLTE.css'
+
+            # (optional) AdminLTE theme plugins
+            #dir_bower + 'AdminLTE/css/ionicons.min.css'
+            #dir_bower + 'AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
+            # (optional) custom files
             #dir_css + 'backend.css'
           ]
 
@@ -134,7 +139,7 @@ module.exports = (grunt) ->
         files: [dir_img + '**/*.{png,jpg,gif}', dir_img + '*.{png,jpg,gif}']
         tasks: ['imagemin']
 
-      # watch:other
+      # watch:other (only for livereload)
       other:
         files: [dir_app + '**/*.{html,php}']
         tasks: []
