@@ -3,6 +3,7 @@ v 0.2.0 (Date: 2014-04-15)
 	[Backend] Add AdminLTE theme for backend system
 	[Backend] Update overall file structure, and Login / Home page layout to adopt AdminLTE theme
 	[Backend] Enable theme switch by changing DEFAULT_THEME value in backend/constants.php, or $this->mTheme value in controllers
+	[Backend] Add "Profile" page with Account Info and Change Password widgets (layout only)
 	[Backend] Remove sidebar_left layout because that is no longer necessary when using AdminLTE theme
 	[General] Update Gruntfile.coffee for loading AdminLTE assets
 	[General] Update Gruntfile.coffee for livereload when update is made on the file itself
