@@ -24,6 +24,9 @@ class Controller extends CI_Hooks
         
         // default values for page output
         $CI->mLayout = "default";
+
+        // default theme
+        $CI->mTheme = DEFAULT_THEME;
         
         // prepare view data
         $CI->mViewData = array(

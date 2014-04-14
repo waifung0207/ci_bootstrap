@@ -25,13 +25,16 @@ class Layout extends CI_Hooks
 
             // change string "{title}" with paremeter on controller
             $layout = str_replace("{title}", $title, $layout);
+
+            // change string "{theme}" with theme name
+            $layout = str_replace("{theme}", $CI->mTheme, $layout);
         }
         else
         {
             // output without layout
             $layout = $output;
         }
- 
+
         /* @var $OUT <type> */
         $OUT->_display($layout);
     }

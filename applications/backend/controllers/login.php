@@ -6,6 +6,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->mLayout = "empty";
+		$this->mTheme = 'bg-black';
 		$this->mViewData['error_msg'] = $this->session->flashdata('error_msg');
 		$this->load->view('login', $this->mViewData);
 	}
