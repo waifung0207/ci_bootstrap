@@ -19,3 +19,11 @@
 		<hr>
 	</form>
 </div>
+
+<footer>
+	<div class="container">
+		<div class="col-lg-12 small text-muted text-center">
+			<p>Copyright &copy; 2014</p>
+		</div>
+	</div>
+</footer>

@@ -1,5 +1,5 @@
-<?php $this->load->view('_partial/header'); ?>
+<?php $this->load->view('_partial/head'); ?>
     
     {body}
 
-<?php $this->load->view('_partial/footer'); ?>
+<?php $this->load->view('_partial/foot'); ?>

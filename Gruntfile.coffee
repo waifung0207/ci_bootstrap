@@ -40,7 +40,7 @@ module.exports = (grunt) ->
           src: [
             'AdminLTE/fonts/**'
           ]
-          dest: "assets/dist/fonts/"
+          dest: "assets/fonts/"
           flatten: true
           filter: 'isFile'
         ]
@@ -67,7 +67,7 @@ module.exports = (grunt) ->
             dir_bower + 'AdminLTE/js/bootstrap.min.js'
             dir_bower + 'AdminLTE/js/jquery-ui-1.10.3.min.js'
             # (optional) custom files
-            #dir_js + 'backend.js'
+            dir_js + 'backend.js'
           ]
 
     # Minify - css
