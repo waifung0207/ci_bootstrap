@@ -139,6 +139,11 @@ module.exports = (grunt) ->
         files: [dir_img + '**/*.{png,jpg,gif}', dir_img + '*.{png,jpg,gif}']
         tasks: ['imagemin']
 
+      # watch:grunt 
+      grunt:
+        files: ['Gruntfile.coffee']
+        tasks: ['build']
+
       # watch:other (only for livereload)
       other:
         files: [dir_app + '**/*.{html,php}']
