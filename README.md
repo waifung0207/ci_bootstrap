@@ -29,3 +29,8 @@ After above installation, you should be able to visit the websites via links lik
 * **Backend** website: http://localhost/ci_bootstrap/backend.php
 
 Whereas the backend website will require login (username and password: admin) before accessing the inner pages.
+
+
+### Screenshots
+
+Website screenshots can be checked from [screenshots folder](https://github.com/waifung0207/ci_bootstrap/tree/master/screenshots) under this repository.
