@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		$this->mLayout = "empty";
 		$this->mTheme = 'bg-black';
 		$this->mViewData['error_msg'] = $this->session->flashdata('error_msg');
-		$this->load->view('login', $this->mViewData);
+		$this->mViewFile = 'login';
 	}
 
 	// Submission of Login Form

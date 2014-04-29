@@ -15,8 +15,8 @@ class Controller extends CI_Hooks
 		$CI->mLocale = $CI->config->item('language');
 		
 		// check if user is logged in
-		$user = $CI->session->userdata('user');
-		if ( empty($user) && $CI->mCtrler!='login' )
+		$CI->mUser = $CI->session->userdata('user');
+		if ( empty($CI->mUser) && $CI->mCtrler!='login' )
 		{
 			redirect('login');
 			return;
@@ -27,15 +27,47 @@ class Controller extends CI_Hooks
 
 		// default theme
 		$CI->mTheme = DEFAULT_THEME;
-		
-		// prepare view data
-		$CI->mViewData = array(
-			'locale'    => $CI->mLocale,
-			'ctrler'    => $CI->mCtrler,
-			'action'    => $CI->mAction,
-			'user'      => $user,
-			'menu'      => $this->setup_menu(),
-		);
+
+		// only for pages after login
+		if ($CI->mCtrler!='login')
+		{
+			// menu items
+			$CI->mMenu = $this->setup_menu();
+
+			// breadcrumb entries
+			$CI->mBreadcrumb = $this->setup_breadcrumb($CI->mCtrler, $CI->mAction);
+
+			// setup basic view data
+			$CI->mViewData = array(
+				'locale'    => $CI->mLocale,
+				'ctrler'    => $CI->mCtrler,
+				'action'    => $CI->mAction,
+				'user'      => $CI->mUser,
+				'menu'		=> $CI->mMenu
+			);
+		}
+	}
+
+	// add extra information to mViewData
+	function add_viewdata()
+	{
+		$CI =& get_instance();
+
+		// only for pages after login
+		if ($CI->mCtrler!='login')
+		{
+			if ($CI->mTitle!='Home')
+			{
+				// add an "active" entry at the end of breadcrumb (based on mTitle)
+				$CI->mBreadcrumb[] = array('name' => $CI->mTitle);	
+			}
+
+			// push to mViewData before rendering
+			$CI->mViewData['breadcrumb'] = $CI->mBreadcrumb;
+		}
+
+		// render output
+		$CI->load->view($CI->mViewFile, $CI->mViewData);
 	}
 
 	// setup menu items
@@ -49,14 +81,14 @@ class Controller extends CI_Hooks
 			),
 
 			// Example to add sections with subpages
-			'manage' => array(
-				'name'      => 'Manage',
-				'url'       => site_url('manage'),
+			'example' => array(
+				'name'      => 'Examples',
+				'url'       => site_url('example'),
 				'icon'      => 'fa fa-cog',
 				'children'  => array(
-					'Users'			=> '#',
-					'News'			=> '#',
-					'Products'		=> '#',
+					'Demo 1'		=> site_url('example/demo/1'),
+					'Demo 2'		=> site_url('example/demo/2'),
+					'Demo 3'		=> site_url('example/demo/3'),
 				)
 			),
 			// end of example
@@ -67,5 +99,28 @@ class Controller extends CI_Hooks
 				'icon'      => 'fa fa-sign-out'
 			),
 		);
+	}
+
+	// setup basic breadcrumb entries
+	private function setup_breadcrumb($ctrler, $action)
+	{
+		$breadcrumb = array();
+
+		// 1st level: home
+		$breadcrumb[] = array(
+			'name'	=> 'Home',
+			'icon'	=> 'fa fa-dashboard',
+			'url'	=> site_url()
+		);
+
+		// other child entries (non-active): add custom child entries inside controller methods as below
+		/*
+		$this->mBreadcrumb[] = array(
+			'name'	=> 'Setting',
+			'icon'	=> 'fa fa-cog',
+			'url'	=> site_url('setting')
+		);*/
+
+		return $breadcrumb;
 	}
 }

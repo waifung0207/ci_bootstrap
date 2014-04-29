@@ -5,7 +5,7 @@ class Profile extends CI_Controller {
 	public function index()
 	{
 		$this->mTitle = "Profile";
-		$this->load->view('profile', $this->mViewData);
+		$this->mViewFile = 'profile';
 	}
 }
 
