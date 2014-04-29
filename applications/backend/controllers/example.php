@@ -7,7 +7,7 @@ class Example extends CI_Controller {
 		$this->mTitle = "Examples";
 		$this->mViewFile = 'example/index';
 	}
-
+	
 	public function demo($id)
 	{
 		// 2nd level of breadcrumb

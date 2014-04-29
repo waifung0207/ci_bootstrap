@@ -56,6 +56,16 @@ class Controller extends CI_Hooks
 		// only for pages after login
 		if ($CI->mCtrler!='login')
 		{
+			// fallback when mTitle is not set / empty
+			if ( empty($CI->mTitle) )
+			{
+				// take controller or action name as title
+				if ($CI->mAction=='index')
+					$CI->mTitle = ucfirst($CI->mCtrler);
+				else
+					$CI->mTitle = ucfirst($CI->mAction);
+			}
+
 			if ($CI->mTitle!='Home')
 			{
 				// add an "active" entry at the end of breadcrumb (based on mTitle)
