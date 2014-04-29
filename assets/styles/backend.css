@@ -1,0 +1,5 @@
+
+/* fix grocerycrud styling */
+.flexigrid div.form-div input[type="text"], .flexigrid div.form-div input[type="password"] {
+	height: auto;
+}

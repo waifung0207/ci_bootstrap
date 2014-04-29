@@ -16,6 +16,17 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+		<?php
+			if ( !empty($crud_data) )
+			{
+				foreach ($crud_data->css_files as $file)
+					echo link_tag($file).PHP_EOL;
+
+				foreach ($crud_data->js_files as $file)
+					echo "<script src='$file'></script>".PHP_EOL;
+			}
+		?>
 	</head>
 
 	<body class="{theme}">

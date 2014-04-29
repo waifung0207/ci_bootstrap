@@ -19,7 +19,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-imagemin": "~0.3.0",
-    "grunt-contrib-watch": "latest",
+    "grunt-contrib-watch": "~0.6.1",
     "grunt-phpunit": "latest"
   }
 }

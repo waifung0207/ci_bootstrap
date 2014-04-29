@@ -96,7 +96,7 @@ module.exports = (grunt) ->
             #dir_bower + 'AdminLTE/css/ionicons.min.css'
             #dir_bower + 'AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
             # (optional) custom files
-            #dir_css + 'backend.css'
+            dir_css + 'backend.css'
           ]
 
     # Optimize images
