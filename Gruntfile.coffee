@@ -9,7 +9,7 @@ module.exports = (grunt) ->
   # =======
   dir_app = 'applications/'
   dir_js = 'assets/js/'
-  dir_css = 'assets/css/'
+  dir_css = 'assets/styles/'
   dir_sass = 'assets/styles/'
   dir_img = 'assets/images/'
   dir_bower = 'bower_components/'
