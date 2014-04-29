@@ -77,7 +77,7 @@ class Controller extends CI_Hooks
 			'home' => array(
 				'name'      => 'Home',
 				'url'       => site_url(),
-				'icon'      => 'fa fa-dashboard'
+				'icon'      => ICON_HOME
 			),
 
 			// Example to add sections with subpages
@@ -109,8 +109,8 @@ class Controller extends CI_Hooks
 		// 1st level: home
 		$breadcrumb[] = array(
 			'name'	=> 'Home',
-			'icon'	=> 'fa fa-dashboard',
-			'url'	=> site_url()
+			'url'	=> site_url(),
+			'icon'	=> ICON_HOME,
 		);
 
 		// other child entries (non-active): add custom child entries inside controller methods as below

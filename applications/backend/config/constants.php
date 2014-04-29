@@ -47,6 +47,7 @@ define('ADMIN_USERNAME',		'admin');
 define('ADMIN_PASSWORD',		'admin');
 define('DEFAULT_THEME',			'skin-blue');
 
+define('ICON_HOME',				'fa fa-home');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
