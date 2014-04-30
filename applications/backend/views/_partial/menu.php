@@ -31,7 +31,8 @@
 				echo "<ul class='treeview-menu' style='$list_display'>";
 				foreach ($parent_params['children'] as $name => $url)
 				{
-					echo "<li><a href='$url' style='margin-left: 10px;'><i class='fa fa-angle-double-right'></i> $name</a></li>";
+					$child_active = (current_url()==$url) ? "class='active'" : '';
+					echo "<li $child_active><a href='$url' style='margin-left: 10px;'><i class='fa fa-angle-double-right'></i> $name</a></li>";
 				}
 				echo "</ul>";
 				echo "</li>";
