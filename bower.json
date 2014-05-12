@@ -17,7 +17,7 @@
   "dependencies": {
     "bootstrap": "3.*",
     "font-awesome": "4.0.*",
-    "kendo-ui": "~2014.1.416",
-    "AdminLTE": "https://github.com/almasaeed2010/AdminLTE.git#1.2"
+    "AdminLTE": "https://github.com/almasaeed2010/AdminLTE.git#1.2",
+    "jquery-migrate": "1.2.*"
   }
 }

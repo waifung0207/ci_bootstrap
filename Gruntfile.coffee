@@ -53,7 +53,8 @@ module.exports = (grunt) ->
         files:
           "assets/dist/app.min.js" : [
             # bower files
-            dir_bower + 'jquery/jquery.min.js'
+            dir_bower + 'jquery/dist/jquery.min.js'
+            dir_bower + 'jquery-migrate/jquery-migrate.min.js'
             dir_bower + 'bootstrap/dist/js/bootstrap.min.js'
             # (optional) custom files
             #dir_js + 'base.js'
@@ -63,7 +64,8 @@ module.exports = (grunt) ->
         files:
           "assets/dist/backend.min.js" : [
             # bower files
-            dir_bower + 'jquery/jquery.min.js'
+            dir_bower + 'jquery/dist/jquery.min.js'
+            dir_bower + 'jquery-migrate/jquery-migrate.min.js'
             dir_bower + 'AdminLTE/js/bootstrap.min.js'
             dir_bower + 'AdminLTE/js/jquery-ui-1.10.3.min.js'
             # (optional) custom files
