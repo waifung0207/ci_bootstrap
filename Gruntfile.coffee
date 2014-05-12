@@ -12,6 +12,7 @@ module.exports = (grunt) ->
   dir_css = 'assets/styles/'
   dir_sass = 'assets/styles/'
   dir_img = 'assets/images/'
+  dir_dist = 'assets/dist/'
   dir_bower = 'bower_components/'
 
 
@@ -26,13 +27,13 @@ module.exports = (grunt) ->
     # Clean
     # --------------------
     clean: [
-      "assets/dist/**"
+      dir_dist + '**'
     ]
 
     # Copy
     # --------------------
     copy:
-      # fonts:fonts
+      # copy:fonts
       fonts:
         files: [
           expand: true
@@ -41,6 +42,19 @@ module.exports = (grunt) ->
             'AdminLTE/fonts/**'
           ]
           dest: "assets/fonts/"
+          flatten: true
+          filter: 'isFile'
+        ]
+      # copy:scripts
+      scripts:
+        files: [
+          expand: true
+          cwd: dir_bower
+          src: [
+            'jquery/dist/jquery.min.js'
+            'jquery-migrate/jquery-migrate.min.js'
+          ]
+          dest: dir_dist
           flatten: true
           filter: 'isFile'
         ]
@@ -64,8 +78,6 @@ module.exports = (grunt) ->
         files:
           "assets/dist/backend.min.js" : [
             # bower files
-            dir_bower + 'jquery/dist/jquery.min.js'
-            dir_bower + 'jquery-migrate/jquery-migrate.min.js'
             dir_bower + 'AdminLTE/js/bootstrap.min.js'
             dir_bower + 'AdminLTE/js/jquery-ui-1.10.3.min.js'
             # (optional) custom files
@@ -113,7 +125,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: dir_img
           src: ['**/*.{png,jpg,gif}']
-          dest: 'assets/dist/images/'
+          dest: dir_dist + 'images/'
         ]
 
     # Watch
