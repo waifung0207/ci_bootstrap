@@ -32,7 +32,8 @@ class Controller extends CI_Hooks
 		if ($CI->mCtrler!='login')
 		{
 			// menu items
-			$CI->mMenu = $this->setup_menu();
+			$CI->config->load('menu');
+			$CI->mMenu = $CI->config->item('menu');
 
 			// breadcrumb entries
 			$CI->mBreadcrumb = $this->setup_breadcrumb($CI->mCtrler, $CI->mAction);
@@ -78,37 +79,6 @@ class Controller extends CI_Hooks
 
 		// render output
 		$CI->load->view($CI->mViewFile, $CI->mViewData);
-	}
-
-	// setup menu items
-	function setup_menu()
-	{
-		return array(
-			'home' => array(
-				'name'      => 'Home',
-				'url'       => site_url(),
-				'icon'      => ICON_HOME
-			),
-
-			// Example to add sections with subpages
-			'example' => array(
-				'name'      => 'Examples',
-				'url'       => site_url('example'),
-				'icon'      => 'fa fa-cog',
-				'children'  => array(
-					'Demo 1'		=> site_url('example/demo/1'),
-					'Demo 2'		=> site_url('example/demo/2'),
-					'Demo 3'		=> site_url('example/demo/3'),
-				)
-			),
-			// end of example
-
-			'logout' => array(
-				'name'      => 'Sign out',
-				'url'       => site_url('login/logout'),
-				'icon'      => 'fa fa-sign-out'
-			),
-		);
 	}
 
 	// setup basic breadcrumb entries
