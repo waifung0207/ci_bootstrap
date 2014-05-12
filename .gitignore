@@ -9,3 +9,8 @@
 /node_modules
 /bower_components
 /assets/dist
+
+# codio
+.codio
+npm-debug.log
+startup.sh
