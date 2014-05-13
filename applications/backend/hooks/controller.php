@@ -11,8 +11,11 @@ class Controller extends CI_Hooks
 		$CI->mAction = $CI->router->fetch_method();
 		$CI->mParam = $CI->uri->segment(3);
 
-		// load language files
-		$CI->mLocale = $this->setup_locale();
+		// [Optional] get locale stored in session
+		//$CI->mLocale = $this->setup_locale();	
+
+		// or use default language if the Backend System only support single locale	
+		$CI->mLocale = $CI->config->item('language');
 		
 		// check if user is logged in
 		$CI->mUser = $CI->session->userdata('user');
@@ -50,7 +53,7 @@ class Controller extends CI_Hooks
 	}
 
 	// add extra information to mViewData
-	private function add_viewdata()
+	function add_viewdata()
 	{
 		$CI =& get_instance();
 
@@ -95,11 +98,11 @@ class Controller extends CI_Hooks
             $CI->session->set_userdata('locale', $locale);
         }
 
-        // load base locale file
-        $CI->lang->load('general', $locale);
-        
+        // [Optional] load base locale file
+        //$CI->lang->load('general', $locale);
+
         /*
-        // load locale file based on current controller
+        // [Optional] load locale file based on current controller
         if ( file_exists(APPPATH.'language/'.$locale.'/'.$CI->mCtrler.'_lang.php') )
         {
             $CI->lang->load($CI->mCtrler, $locale);    
