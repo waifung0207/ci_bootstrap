@@ -32,13 +32,6 @@ class Login extends CI_Controller {
 			redirect('login');
 		}
 	}
-
-	// Logout user
-	public function logout()
-	{
-		$this->session->unset_userdata('user');
-		redirect('login');
-	}
 }
 
 /* End of file login.php */

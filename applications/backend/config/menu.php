@@ -31,7 +31,7 @@ $config['menu'] = array(
 
 	'logout' => array(
 		'name'      => 'Sign out',
-		'url'       => site_url('login/logout'),
+		'url'       => site_url('account/logout'),
 		'icon'      => 'fa fa-sign-out'
 	),
 );

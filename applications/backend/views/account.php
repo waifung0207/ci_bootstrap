@@ -14,11 +14,11 @@
 			<div class="box-header">
 				<h3 class="box-title">Account Info</h3>
 			</div>
-			<form role="form" action="<?php echo site_url('profile/update_account'); ?>" method="POST">
+			<form role="form" action="<?php echo site_url('account/update_account'); ?>" method="POST">
 				<div class="box-body">
 					<div class="form-group">
 						<label for="fullname">Full Name</label>
-						<input type="text" placeholder="Display Name" id="fullname" class="form-control" value="<?php echo $user['fullname']; ?>">
+						<input type="text" placeholder="Display Name" id="fullname" class="form-control" name="fullname" value="<?php echo $user['fullname']; ?>">
 					</div>
 				</div>
 				<div class="box-footer">
@@ -34,15 +34,15 @@
 			<div class="box-header">
 				<h3 class="box-title">Change Password</h3>
 			</div>
-			<form role="form" action="<?php echo site_url('profile/change_password'); ?>" method="POST">
+			<form role="form" action="<?php echo site_url('account/change_password'); ?>" method="POST">
 				<div class="box-body">
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="password" placeholder="New Password" id="password" class="form-control">
+						<input type="password" placeholder="New Password" id="password" name="password" class="form-control">
 					</div>
 					<div class="form-group">
 						<label for="retype_password">Retype Password</label>
-						<input type="password" placeholder="Retype Password" id="retype_password" class="form-control">
+						<input type="password" placeholder="Retype Password" id="retype_password" name="retype_password" class="form-control">
 					</div>
 				</div>
 				<div class="box-footer">
