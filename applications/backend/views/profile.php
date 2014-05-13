@@ -1,4 +1,11 @@
 
+<?php
+	if ( !empty($result_type) )
+	{
+		$this->load->view('_partial/result_alert');
+	}
+?>
+
 <div class="row">
 
 	<!-- Account Info -->
@@ -7,7 +14,7 @@
 			<div class="box-header">
 				<h3 class="box-title">Account Info</h3>
 			</div>
-			<form role="form">
+			<form role="form" action="<?php echo site_url('profile/update_account'); ?>" method="POST">
 				<div class="box-body">
 					<div class="form-group">
 						<label for="fullname">Full Name</label>
@@ -27,7 +34,7 @@
 			<div class="box-header">
 				<h3 class="box-title">Change Password</h3>
 			</div>
-			<form role="form">
+			<form role="form" action="<?php echo site_url('profile/change_password'); ?>" method="POST">
 				<div class="box-body">
 					<div class="form-group">
 						<label for="password">Password</label>
