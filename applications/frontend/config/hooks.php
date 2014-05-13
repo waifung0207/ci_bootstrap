@@ -18,6 +18,14 @@ $hook['post_controller_constructor'][] = array(
     'filepath'		=> 'hooks'
 );
 
+// for additional viewdata called after controller functions (e.g. add breadcrumb, render output)
+$hook['post_controller'][] = array(
+	'class'			=> 'controller',
+	'function'		=> 'add_viewdata',
+	'filename'		=> 'controller.php',
+	'filepath'		=> 'hooks'
+);
+
 // for rendering layout
 $hook['display_override'][] = array(
 	'class'			=> 'layout',

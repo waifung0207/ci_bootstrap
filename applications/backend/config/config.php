@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = md5('development-session-key');
+$config['encryption_key'] = md5('ci-bootstrap');
 
 /*
 |--------------------------------------------------------------------------

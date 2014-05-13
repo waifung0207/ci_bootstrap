@@ -37,5 +37,17 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+/*
+|--------------------------------------------------------------------------
+| Custom constants
+|--------------------------------------------------------------------------
+| 
+| Any custom constants to be placed here.
+|
+*/
+
+define('ICON_HOME',				'fa fa-home');
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

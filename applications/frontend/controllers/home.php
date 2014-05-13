@@ -5,8 +5,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->mTitle = "Home";
-		$this->mLayout = "sidebar_left";
-		$this->load->view('home', $this->mViewData);
+		$this->mViewFile = 'home';
 	}
 }
 

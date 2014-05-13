@@ -28,10 +28,4 @@ $config['menu'] = array(
 		)
 	),
 	// end of example
-
-	'logout' => array(
-		'name'      => 'Sign out',
-		'url'       => site_url('login/logout'),
-		'icon'      => 'fa fa-sign-out'
-	),
 );
