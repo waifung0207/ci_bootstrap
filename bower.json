@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "bootstrap": "3.*",
-    "font-awesome": "4.0.*",
+    "font-awesome": "4.*",
     "AdminLTE": "https://github.com/almasaeed2010/AdminLTE.git#1.2",
     "jquery-migrate": "1.2.*"
   }
