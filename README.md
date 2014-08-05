@@ -34,3 +34,8 @@ Whereas the backend website will require login (username and password: admin) be
 ### Screenshots
 
 Website screenshots can be checked from [screenshots folder](https://github.com/waifung0207/ci_bootstrap/tree/master/screenshots) under this repository.
+
+
+### Changelog
+
+Project changelog is recorded down in the [changelog.txt file](https://github.com/waifung0207/ci_bootstrap/blob/master/changelog.txt).
