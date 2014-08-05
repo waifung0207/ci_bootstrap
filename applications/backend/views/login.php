@@ -3,9 +3,7 @@
 	<div class="header">Sign In</div>
 	<form action="<?php echo site_url('login/post_login'); ?>" method="post">
 		<div class="body bg-gray">
-		<?php if ( !empty($error_msg) ) { ?>
-			<div class="alert alert-danger" style="margin-left:0"><?php echo $error_msg; ?></div>
-		<?php } ?>
+			<?php echo alert_box(); ?>
 			<div class="form-group">
 				<input type="text" name="username" class="form-control" placeholder="Username" value="<?php if (ENVIRONMENT=='development') echo ADMIN_USERNAME; ?>" />
 			</div>

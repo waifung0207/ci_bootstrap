@@ -4,9 +4,6 @@ class Account extends CI_Controller {
 
 	public function index()
 	{
-		$this->mViewData['result_type'] = $this->session->flashdata('result_type');
-		$this->mViewData['result_msg'] = $this->session->flashdata('result_msg');
-
 		$this->mTitle = "Account Settings";
 		$this->mViewFile = 'account';
 	}
@@ -21,8 +18,7 @@ class Account extends CI_Controller {
 		// custom logic here (e.g. validation, save to database)
 
 		// return with message
-		$this->session->set_flashdata('result_type', 'success');
-		$this->session->set_flashdata('result_msg', 'Account info updated.');
+		set_alert('success', 'Account info updated.');
 		redirect('account');
 	}
 
@@ -39,20 +35,17 @@ class Account extends CI_Controller {
 		if (empty($password) || empty($retype_password))
 		{
 			// warning
-			$this->session->set_flashdata('result_type', 'warning');
-			$this->session->set_flashdata('result_msg', 'Password cannot be empty.');
+			set_alert('warning', 'Password cannot be empty.');
 		}
 		else if ($password != $retype_password)
 		{
 			// error
-			$this->session->set_flashdata('result_type', 'danger');
-			$this->session->set_flashdata('result_msg', 'Passwords not match.');
+			set_alert('danger', 'Passwords not match.');
 		}
 		else
 		{
 			// success
-			$this->session->set_flashdata('result_type', 'success');
-			$this->session->set_flashdata('result_msg', 'Password changed successfully.');
+			set_alert('success', 'Password changed successfully.');
 		}
 		
 		redirect('account');

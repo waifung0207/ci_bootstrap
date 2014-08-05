@@ -81,7 +81,8 @@ class Controller extends CI_Hooks
 		}
 
 		// render output
-		$CI->load->view($CI->mViewFile, $CI->mViewData);
+		$view_data = empty($CI->mViewData) ? '' : $CI->mViewData;
+		$CI->load->view($CI->mViewFile, $view_data);
 	}
 
 	// setup locale

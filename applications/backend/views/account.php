@@ -1,10 +1,5 @@
 
-<?php
-	if ( !empty($result_type) )
-	{
-		$this->load->view('_partial/result_alert');
-	}
-?>
+<?php echo alert_box(); ?>
 
 <div class="row">
 

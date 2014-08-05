@@ -7,7 +7,6 @@ class Login extends CI_Controller {
 	{
 		$this->mLayout = "empty";
 		$this->mTheme = 'bg-black';
-		$this->mViewData['error_msg'] = $this->session->flashdata('error_msg');
 		$this->mViewFile = 'login';
 	}
 
@@ -28,7 +27,7 @@ class Login extends CI_Controller {
 		else
 		{
 			// failed
-			$this->session->set_flashdata('error_msg', 'Invalid Login');
+			set_alert('danger', 'Invalid Login');
 			redirect('login');
 		}
 	}
