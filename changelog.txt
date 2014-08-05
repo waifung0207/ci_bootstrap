@@ -1,4 +1,9 @@
 
+v 0.2.2 (Date: 2014-08-06)
+	[Backend] Added email config file (Mailgun example)
+	[Backend] Added email helper with overrided send_mail() function
+	[Backend] Added views/email folder to store email templates
+
 v 0.2.1 (Date: 2014-08-02)
 	[Backend] Switch to jquery legacy version for better Grocery Crud support
 	[Backend] Added alert helper to work with setting / showing alert box more easily
