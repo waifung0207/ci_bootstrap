@@ -6,10 +6,9 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
-		<title>My Website - {title}</title>
+		<title>Backend System - {title}</title>
 
 		<script src="<?php echo base_url('assets/dist/jquery.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/dist/jquery-migrate.min.js'); ?>"></script>
 
 		<?php
 			// Grocery CRUD scripts

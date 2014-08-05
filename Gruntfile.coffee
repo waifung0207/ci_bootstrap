@@ -51,8 +51,9 @@ module.exports = (grunt) ->
           expand: true
           cwd: dir_bower
           src: [
-            'jquery/dist/jquery.min.js'
-            'jquery-migrate/jquery-migrate.min.js'
+            #'jquery/dist/jquery.min.js'
+            #'jquery-migrate/jquery-migrate.min.js'
+            'jquery-legacy/jquery.min.js'
           ]
           dest: dir_dist
           flatten: true
@@ -67,8 +68,9 @@ module.exports = (grunt) ->
         files:
           "assets/dist/app.min.js" : [
             # bower files
-            dir_bower + 'jquery/dist/jquery.min.js'
-            dir_bower + 'jquery-migrate/jquery-migrate.min.js'
+            #dir_bower + 'jquery/dist/jquery.min.js'
+            #dir_bower + 'jquery-migrate/jquery-migrate.min.js'
+            dir_bower + 'jquery-legacy/jquery.min.js'
             dir_bower + 'bootstrap/dist/js/bootstrap.min.js'
             # (optional) custom files
             #dir_js + 'base.js'
