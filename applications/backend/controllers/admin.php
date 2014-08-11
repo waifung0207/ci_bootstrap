@@ -20,7 +20,8 @@ class Admin extends MY_Controller {
 	public function backend_user()
 	{
 		// CRUD table
-		$crud = $this->enable_crud('backend_users');
+		$this->load->helper('crud');
+		$crud = generate_crud('backend_users');
 		$crud->columns('role', 'username', 'full_name', 'active', 'created_at');
 		$crud->unset_edit_fields('password');
 		$crud->callback_before_insert(array($this, 'callback_before_create_user'));
