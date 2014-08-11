@@ -1,7 +1,7 @@
 
 <div class="form-box" id="login-box">
 	<div class="header">Sign In</div>
-	<form action="<?php echo site_url('login/post_login'); ?>" method="post">
+	<form action="<?php echo site_url('login'); ?>" method="post">
 		<div class="body bg-gray">
 			<?php echo alert_box(); ?>
 			<div class="form-group">

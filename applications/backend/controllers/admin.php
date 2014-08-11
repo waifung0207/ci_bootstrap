@@ -17,7 +17,7 @@ class Admin extends MY_Controller {
 		$this->mViewFile = '_partial/crud';
 		$this->mViewData['crud_data'] = $crud->render();
 	}
-
+	
 	/**
 	 * Grocery Crud callback functions
 	 */
