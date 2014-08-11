@@ -30,7 +30,7 @@ Some useful helpers are created for better code reuse throught the project; any 
 * **alert_helper**: to handle form message (e.g. success/error) in a easy way
 * **auth_helper**: to handle user authentication
 * **MY_email_helper**: to handle email sending operations
-* **MY_form_helper**: wrapper function to shorten coding when deal with CodeIgniter's form validation
+* **MY_form_helper**: to shorten CodeIgniter's form validation; and functions to generate common form elements
 * **MY_html_helper**: to generate AdminLTE widgets
 * **MY_url_helper**: shortcut functions to reach assets
 
