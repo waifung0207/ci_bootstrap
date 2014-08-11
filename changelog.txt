@@ -7,6 +7,7 @@ v 0.3 (Date: 2014-08-11)
 	[Backend] Removed custom constants from config/constants.php
 	[Backend] Login users can now update info and change password from Account page
 	[Backend] Added config/form_validation.php file and helpers/MY_form_helper.php for quick validation coding via rule sets
+	[Backend] Added MY_html_helper.php for generating AdminLTE widgets
 	[General] Included "assets/dist" in current repository for quick project setup (when no asset customization is required)
 
 v 0.2.2 (Date: 2014-08-06)
