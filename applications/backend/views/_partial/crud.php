@@ -3,8 +3,4 @@
 
 <?php if ( !empty($crud_data) ) echo $crud_data->output; ?>
 
-<?php if ( !empty($back_url) ) { ?>
-	<a href="<?php echo $back_url; ?>" class="btn btn-primary">
-		<i class="fa fa-reply"></i> Back
-	</a>
-<?php } ?>
+<?php if ( !empty($back_url) ) echo btn('Back', $back_url, 'reply'); ?>

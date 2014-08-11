@@ -66,6 +66,6 @@ Project changelog is recorded down in the [changelog.txt file](https://github.co
 * Add example of using Image CRUD
 * Basic membership workflow (e.g. register, login, forgot password) on frontend system
 * Multilingual support
-* More helpers (e.g. generate HTML elements) to enhance code reusability
+* More helpers to enhance code reusability
 * Better documentation
 * Update screenshots

@@ -5,15 +5,16 @@
  * Styling from: http://almsaeedstudio.com/AdminLTE/
  */
 
-function btn($label, $url = '', $style = 'primary', $size = '')
+function btn($label, $url = '', $icon = '', $style = 'primary', $size = '')
 {
 	$size = empty($size) ? '' : 'btn-'.$size;
 	$url = empty($url) ? '' : site_url($url);
+	$icon = empty($icon) ? '' : "<i class='fa fa-$icon'></i>";
 
 	if ( empty($url) )
-		return "<button class='btn btn-$style $size'>$label</button>";
+		return "<button class='btn btn-$style $size'>$icon $label</button>";
 	else
-		return "<a class='btn btn-$style $size' href='$url'>$label</a>";
+		return "<a class='btn btn-$style $size' href='$url'>$icon $label</a>";
 }
 
 function btn_submit($label = 'Submit', $style = 'primary')

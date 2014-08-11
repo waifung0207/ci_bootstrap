@@ -39,7 +39,7 @@ class Admin extends MY_Controller {
 	 */
 	public function reset_password($user_id)
 	{
-		$this->mTitle = "Backend Users - Reset Password";
+		$this->mTitle = "Backend Users";
 		$this->mViewFile = 'admin/reset_password';
 		$this->mViewData['target'] = $this->backend_users->get($user_id);
 
