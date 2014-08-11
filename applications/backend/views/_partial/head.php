@@ -6,9 +6,8 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
-		<title>Backend System - {title}</title>
-
-		<script src="<?php echo base_url('assets/dist/jquery.min.js'); ?>"></script>
+		<title>Backend System - {title}</title>		
+		<script src="<?php echo base_url('assets/dist/backend.min.js'); ?>"></script>
 
 		<?php
 			// Grocery CRUD scripts

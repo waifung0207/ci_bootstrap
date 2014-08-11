@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session');
+$autoload['libraries'] = array('database', 'session');
 
 
 /*
@@ -64,7 +64,10 @@ $autoload['libraries'] = array('session');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'html', 'inflector', 'alert');
+$autoload['helper'] = array(
+	'url', 'html', 'inflector', 'array', 	// CodeIgniter helpers
+	'alert', 'auth'							// CI Bootstrap helpers
+);
 
 
 /*

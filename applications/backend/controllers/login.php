@@ -13,25 +13,31 @@ class Login extends CI_Controller {
 	// Submission of Login Form
 	public function post_login()
 	{
-		// authenication login here
-		if ($_POST['username']==ADMIN_USERNAME && $_POST['password']==ADMIN_PASSWORD)
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		$this->load->helper('auth');
+		$this->load->model('Backend_user_model', 'backend_users');
+		$user = $this->backend_users->get_by('username', $username);
+
+		// only admin and staff can login
+		if ( !empty($user) && (in_array($user['role'], ['admin', 'staff'])) )
 		{
-			// success
-			$user = array(
-				'fullname' => ADMIN_FULLNAME,
-				'username' => ADMIN_USERNAME
-			);
-			$this->session->set_userdata('user', $user);
-			redirect('home');
+			// password correct
+			if ( verify_pw($password, $user['password']) )
+			{
+				// success
+				$fields = array('id', 'role', 'username', 'full_name', 'created_at');
+				$user_data = elements($fields, $user);
+				$this->session->set_userdata('user', $user_data);
+
+				redirect('home');
+				exit;
+			}
 		}
-		else
-		{
-			// failed
-			set_alert('danger', 'Invalid Login');
-			redirect('login');
-		}
+
+		// failed
+		set_alert('danger', 'Invalid Login');
+		redirect('login');
 	}
 }
-
-/* End of file login.php */
-/* Location: ./application/controllers/login.php */

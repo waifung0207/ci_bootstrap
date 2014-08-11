@@ -17,11 +17,11 @@
 				<li class="dropdown user user-menu">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="fa fa-user"></i>
-						<span><?php echo $user['fullname']; ?> <i class="caret"></i></span>
+						<span><?php echo $user['full_name']; ?> <i class="caret"></i></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li class="user-header bg-light-blue">
-							<p><?php echo $user['fullname']; ?></p>
+							<p><?php echo $user['full_name']; ?></p>
 						</li>
 						<li class="user-footer">
 							<div class="pull-left">

@@ -60,6 +60,3 @@ class Account extends CI_Controller {
 		redirect('login');
 	}
 }
-
-/* End of file account.php */
-/* Location: ./application/controllers/account.php */

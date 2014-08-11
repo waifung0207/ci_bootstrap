@@ -9,7 +9,7 @@
 			<section class="sidebar">
 				<div class="user-panel">
 					<div class="pull-left info">
-						<p>Hello, <?php echo $user['fullname']; ?></p>
+						<p>Hello, <?php echo $user['full_name']; ?></p>
 						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
 				</div>

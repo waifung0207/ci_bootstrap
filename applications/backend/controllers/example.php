@@ -20,6 +20,3 @@ class Example extends CI_Controller {
 		$this->mViewFile = 'example/demo';
 	}
 }
-
-/* End of file example.php */
-/* Location: ./application/controllers/example.php */

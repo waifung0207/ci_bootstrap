@@ -28,8 +28,8 @@ class Controller extends CI_Hooks
 		// default values for page output
 		$CI->mLayout = "default";
 
-		// default theme
-		$CI->mTheme = DEFAULT_THEME;
+		// switch theme between "admin" and "staff" roles
+		$CI->mTheme = ( !empty($CI->mUser) && $CI->mUser['role']=='admin' ) ? 'skin-black' : 'skin-blue';
 
 		// only for pages after login
 		if ($CI->mCtrler!='login')
@@ -121,7 +121,7 @@ class Controller extends CI_Hooks
 		$breadcrumb[] = array(
 			'name'	=> 'Home',
 			'url'	=> site_url(),
-			'icon'	=> ICON_HOME,
+			'icon'	=> 'fa fa-home',
 		);
 
 		// other child entries (non-active): add custom child entries inside controller methods as below

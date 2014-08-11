@@ -42,12 +42,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 | Custom constants
 |--------------------------------------------------------------------------
 */
-define('ADMIN_FULLNAME',		'Administrator');
-define('ADMIN_USERNAME',		'admin');
-define('ADMIN_PASSWORD',		'admin');
-define('DEFAULT_THEME',			'skin-blue');
-
-define('ICON_HOME',				'fa fa-home');
+//define('DEFAULT_THEME',			'skin-blue');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

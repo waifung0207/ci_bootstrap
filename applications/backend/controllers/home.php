@@ -8,6 +8,3 @@ class Home extends CI_Controller {
 		$this->mViewFile = 'home';
 	}
 }
-
-/* End of file home.php */
-/* Location: ./application/controllers/home.php */

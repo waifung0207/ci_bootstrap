@@ -5,10 +5,10 @@
 		<div class="body bg-gray">
 			<?php echo alert_box(); ?>
 			<div class="form-group">
-				<input type="text" name="username" class="form-control" placeholder="Username" value="<?php if (ENVIRONMENT=='development') echo ADMIN_USERNAME; ?>" />
+				<input type="text" name="username" class="form-control" placeholder="Username" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
 			</div>
 			<div class="form-group">
-				<input type="password" name="password" class="form-control" placeholder="Password" value="<?php if (ENVIRONMENT=='development') echo ADMIN_PASSWORD; ?>" />
+				<input type="password" name="password" class="form-control" placeholder="Password" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
 			</div>
 		</div>
 		<div class="footer">

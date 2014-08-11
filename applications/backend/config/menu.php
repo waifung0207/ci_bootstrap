@@ -13,7 +13,13 @@ $config['menu'] = array(
 	'home' => array(
 		'name'      => 'Home',
 		'url'       => site_url(),
-		'icon'      => ICON_HOME
+		'icon'      => 'fa fa-home'
+	),
+
+	'user' => array(
+		'name'      => 'Users',
+		'url'       => site_url('user'),
+		'icon'      => 'fa fa-users'
 	),
 
 	// Example to add sections with subpages
@@ -28,6 +34,15 @@ $config['menu'] = array(
 		)
 	),
 	// end of example
+
+	'admin' => array(
+		'name'      => 'Administration',
+		'url'       => site_url('admin'),
+		'icon'      => 'fa fa-cog',
+		'children'  => array(
+			'Backend Users'		=> site_url('admin/backend_user'),
+		)
+	),
 
 	'logout' => array(
 		'name'      => 'Sign out',

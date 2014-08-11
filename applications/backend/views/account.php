@@ -12,8 +12,8 @@
 			<form role="form" action="<?php echo site_url('account/update_account'); ?>" method="POST">
 				<div class="box-body">
 					<div class="form-group">
-						<label for="fullname">Full Name</label>
-						<input type="text" placeholder="Display Name" id="fullname" class="form-control" name="fullname" value="<?php echo $user['fullname']; ?>">
+						<label for="full_name">Full Name</label>
+						<input type="text" placeholder="Display Name" id="full_name" class="form-control" name="full_name" value="<?php echo $user['full_name']; ?>">
 					</div>
 				</div>
 				<div class="box-footer">
