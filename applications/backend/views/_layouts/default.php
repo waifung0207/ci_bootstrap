@@ -25,6 +25,7 @@
 			</section>			
 			<section class="content">
 				{body}
+				<?php $this->load->view('_partial/back'); ?>
 			</section>
 		</aside>
 

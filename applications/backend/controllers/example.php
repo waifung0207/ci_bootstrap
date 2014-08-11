@@ -13,5 +13,6 @@ class Example extends MY_Controller {
 		$this->push_breadcrumb('Examples', 'example');
 		$this->mTitle = "Demo ".$id;
 		$this->mViewFile = 'example/demo';
+		$this->mViewData['back_url'] = 'example';
 	}
 }
