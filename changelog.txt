@@ -1,4 +1,14 @@
 
+v 0.3 (Date: 2014-08-11)
+	[Backend] Linked with MySQL database for backend user login (table name: "")
+	[Backend] Added sql folder with MySQL data structure
+	[Backend] 2 preset backend users from .sql file: login as "admin/admin" (role = admin), or "staff/staff" (role = staff)
+	[Backend] Login as different roles will now show different themes
+	[Backend] Removed custom constants from config/constants.php
+	[Backend] Login users can now update info and change password from Account page
+	[Backend] Added config/form_validation.php file and helpers/MY_form_helper.php for quick validation coding via rule sets
+	[General] Included "assets/dist" in current repository for quick project setup (when no asset customization is required)
+
 v 0.2.2 (Date: 2014-08-06)
 	[Backend] Added email config file (Mailgun example)
 	[Backend] Added email helper with overrided send_mail() function
