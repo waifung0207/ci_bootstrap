@@ -1,5 +1,14 @@
 
-/* fix grocerycrud styling */
+/**
+ * Fix GroceryCrud styling (e.g. conflict with AdminLTE)
+ */
+
 .flexigrid div.form-div input[type="text"], .flexigrid div.form-div input[type="password"] {
 	height: auto;
+}
+
+.checkbox, .radio {
+	display: inline;
+    margin-bottom: 0;
+    margin-top: 5px;
 }
