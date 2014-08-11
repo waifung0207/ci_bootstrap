@@ -6,6 +6,7 @@ v 0.3 (Date: 2014-08-11)
 	[Backend] Login as different roles will now show different themes
 	[Backend] Removed custom constants from config/constants.php
 	[Backend] Login users can now update info and change password from Account page
+	[Backend] Backend users (admin role) can reset password of other backend users
 	[Backend] Added config/form_validation.php file and helpers/MY_form_helper.php for quick validation coding via rule sets
 	[Backend] Added MY_html_helper.php for generating AdminLTE widgets
 	[Backend] Moved CRUD library loading to crud_helper
