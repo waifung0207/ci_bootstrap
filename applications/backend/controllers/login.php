@@ -18,16 +18,13 @@ class Login extends CI_Controller {
 			$user = $this->backend_users->get_by('username', $username);
 
 			// only admin and staff can login
-			if ( !empty($user) && (in_array($user['role'], ['admin', 'staff'])) )
+			if ( verify_role(['admin', 'staff'], $user) )
 			{
 				// password correct
 				if ( verify_pw($password, $user['password']) )
 				{
 					// success
-					$fields = array('id', 'role', 'username', 'full_name', 'created_at');
-					$user_data = elements($fields, $user);
-					$this->session->set_userdata('user', $user_data);
-
+					login_user($user);
 					redirect('home');
 					exit;
 				}

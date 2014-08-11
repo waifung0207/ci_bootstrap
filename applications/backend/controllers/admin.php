@@ -2,6 +2,18 @@
 
 class Admin extends MY_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		// only admin role can access this controller
+		if ( !verify_role('admin') )
+		{
+			redirect();
+			exit;
+		}
+	}
+
 	/**
 	 * Backend users
 	 */

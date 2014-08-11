@@ -30,12 +30,7 @@ class Account extends CI_Controller {
 			if ($result)
 			{
 				// update session user data
-				foreach ($data as $key => $value)
-				{
-					$this->mUser[$key] = $value;
-				}
-				$this->session->set_userdata('user', $this->mUser);
-
+				refresh_user($data);
 				set_alert('success', 'Account info updated.');
 			}
 			else
@@ -76,7 +71,7 @@ class Account extends CI_Controller {
 	 */
 	public function logout()
 	{
-		$this->session->unset_userdata('user');
+		logout_user();
 		redirect('login');
 	}
 }

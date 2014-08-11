@@ -12,13 +12,13 @@ class Controller extends CI_Hooks
 		$CI->mParam = $CI->uri->segment(3);
 
 		// [Optional] get locale stored in session
-		//$CI->mLocale = $this->setup_locale();	
+		//$CI->mLocale = $this->setup_locale();
 
 		// or use default language if the Backend System only support single locale	
 		$CI->mLocale = $CI->config->item('language');
 		
 		// check if user is logged in
-		$CI->mUser = $CI->session->userdata('user');
+		$CI->mUser = get_user();
 		if ( empty($CI->mUser) && $CI->mCtrler!='login' )
 		{
 			redirect('login');
@@ -29,7 +29,7 @@ class Controller extends CI_Hooks
 		$CI->mLayout = "default";
 
 		// switch theme between "admin" and "staff" roles
-		$CI->mTheme = ( !empty($CI->mUser) && $CI->mUser['role']=='admin' ) ? 'skin-black' : 'skin-blue';
+		$CI->mTheme = verify_role('admin') ? 'skin-black' : 'skin-blue';
 
 		// only for pages after login
 		if ($CI->mCtrler!='login')
@@ -123,7 +123,7 @@ class Controller extends CI_Hooks
 			'url'	=> site_url(),
 			'icon'	=> 'fa fa-home',
 		);
-
+		
 		// other child entries (non-active): add custom child entries inside controller methods as below
 		/*
 		$this->mBreadcrumb[] = array(
