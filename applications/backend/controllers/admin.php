@@ -23,7 +23,6 @@ class Admin extends MY_Controller {
 	 */
 	public function callback_before_create_user($post_array)
 	{
-		$this->load->helper('auth');
 		$post_array['password'] = hash_pw($post_array['password']);
 		return $post_array;
 	}
