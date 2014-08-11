@@ -5,9 +5,9 @@
  */
 
 // Shortcut function for validate form
-// [Optional] set "rule_set" for name of rule sets in config/form_validation.php
 // [Optional] set "form_url" for location of the form page
-function validate_form($rule_set = '', $form_url = '')
+// [Optional] set "rule_set" for name of rule sets in config/form_validation.php (if empty, CodeIgniter will detect as "controller/method" pattern, e.g. "account/update")
+function validate_form($form_url = '', $rule_set = '')
 {
 	$CI =& get_instance();
 	$CI->load->library('form_validation');

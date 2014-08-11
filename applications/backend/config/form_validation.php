@@ -21,5 +21,28 @@ $config = array(
 			'rules'		=> 'required',
 		),
 	),
+
+	// Update Info form
+	'account/update_account' => array(
+		array(
+			'field'		=> 'full_name',
+			'label'		=> 'Full Name',
+			'rules'		=> 'required',
+		),
+	),
+
+	// Change Password form
+	'account/change_password' => array(
+		array(
+			'field'		=> 'password',
+			'label'		=> 'Password',
+			'rules'		=> 'required|matches[retype_password]',
+		),
+		array(
+			'field'		=> 'retype_password',
+			'label'		=> 'Retype Password',
+			'rules'		=> 'required',
+		),
+	),
 	
 );

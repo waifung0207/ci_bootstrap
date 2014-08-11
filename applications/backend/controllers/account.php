@@ -2,6 +2,12 @@
 
 class Account extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Backend_user_model', 'backend_users');
+	}
+
 	public function index()
 	{
 		$this->mTitle = "Account Settings";
@@ -13,13 +19,34 @@ class Account extends CI_Controller {
 	 */
 	public function update_account()
 	{
-		$post_data = $this->input->post();
+		$form_url = 'account';
 
-		// custom logic here (e.g. validation, save to database)
+		if ( validate_form($form_url) )
+		{
+			// update db
+			$data = elements(['full_name'], $this->input->post());
+			$result = $this->backend_users->update($this->mUser['id'], $data);
 
-		// return with message
-		set_alert('success', 'Account info updated.');
-		redirect('account');
+			if ($result)
+			{
+				// update session user data
+				foreach ($data as $key => $value)
+				{
+					$this->mUser[$key] = $value;
+				}
+				$this->session->set_userdata('user', $this->mUser);
+
+				set_alert('success', 'Account info updated.');
+			}
+			else
+			{
+				// unknown database error
+				set_alert('danger', 'Update failed.');
+			}
+		}
+
+		// back to form
+		redirect($form_url);
 	}
 
 	/**
@@ -27,28 +54,21 @@ class Account extends CI_Controller {
 	 */
 	public function change_password()
 	{
-		$post_data = $this->input->post();
-		$password = $post_data['password'];
-		$retype_password = $post_data['retype_password'];
+		$form_url = 'account';
 
-		// custom logic here (e.g. validation, save to database)
-		if (empty($password) || empty($retype_password))
+		if ( validate_form($form_url) )
 		{
-			// warning
-			set_alert('warning', 'Password cannot be empty.');
-		}
-		else if ($password != $retype_password)
-		{
-			// error
-			set_alert('danger', 'Passwords not match.');
-		}
-		else
-		{
+			// update db
+			$password = $this->input->post('password');
+			$update_data = ['password' => hash_pw($password)];
+			$result = $this->backend_users->update($this->mUser['id'], $update_data);
+			
 			// success
 			set_alert('success', 'Password changed successfully.');
 		}
-		
-		redirect('account');
+
+		// back to form
+		redirect($form_url);
 	}
 	
 	/**
