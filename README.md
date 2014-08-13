@@ -54,10 +54,15 @@ Afterwards, change directory from your terminal to where you cloned the reposito
 
 ### Screenshots
 
-![](screenshots/backend_login.png "Backend Login")
-![](screenshots/backend_login.png =250x)
+Frontend - Sign Up: 
 
-All screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
+![](screenshots/frontend_sign.png "Frontend Sign Up")
+
+Backend - Home: 
+
+![](screenshots/backend_home_admin.png "Backend Home")
+
+More screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
 
 
 ### Changelog
