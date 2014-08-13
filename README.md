@@ -52,6 +52,11 @@ Afterwards, change directory from your terminal to where you cloned the reposito
 4. After all you will find the post-processed files under the **"assets/dist"** folder, means you have successfully configured it :)
 
 
+### Screenshots
+
+The website screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
+
+
 ### Changelog
 
 Project changelog is recorded down in the [CHANGELOG file](https://github.com/waifung0207/ci_bootstrap/blob/master/CHANGELOG.md).
@@ -64,4 +69,3 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 * Multilingual support
 * More helpers to enhance code reusability
 * Better documentation
-* Update screenshots

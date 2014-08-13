@@ -8,6 +8,10 @@
 	- Added feature to Update Info / Change Password for login user
 	- Show different menu for visitors, or login users
 	- Includes some helpers (e.g. email, form validation) which come from Backend System
+- **Backend**
+	- Changed side according to login user's role
+- **General**
+	- Updated screenshots
 
 #### v 0.3 (Date: 2014-08-11)
 - **Backend**

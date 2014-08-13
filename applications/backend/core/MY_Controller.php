@@ -35,7 +35,7 @@ class MY_Controller extends CI_Controller
 		$this->mTheme = verify_role('admin') ? 'skin-black' : 'skin-blue';
 
 		// side menu items
-		$this->config->load('menu');
+		$this->config->load('menu_'.$this->mUser['role']);
 		$this->mMenu = $this->config->item('menu');
 
 		// breadcrumb entries
