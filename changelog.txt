@@ -1,4 +1,10 @@
 
+v 0.4 (Date: 2014-08-14)
+	[Frontend] Use Bootswatch theme instead of original Bootstrap styling
+	[Frontend] Basic workflow and layout for user Login / Sign Up / Logout
+	[Frontend] Show different menu for visitors, or login users
+	[Frontend] Includes some helpers (e.g. email, form validation) which come from Backend System
+
 v 0.3 (Date: 2014-08-11)
 	[Backend] Linked with MySQL database for backend user login (table name: "")
 	[Backend] Added sql folder with MySQL data structure
