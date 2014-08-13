@@ -19,6 +19,10 @@ function validate_form($form_url = '', $rule_set = '')
 			// save error messages to flashdata
 			set_alert('danger', validation_errors());
 
+			// save all fields to flashdata for repopulating
+			// note: set_value() will not work upon redirection
+			$CI->session->set_flashdata('form_fields', $CI->input->post());
+
 			// refresh or jump page to show error messagees
 			$url = empty($form_url) ? current_url() : $form_url;
 			redirect($url);
@@ -38,12 +42,16 @@ function validate_form($form_url = '', $rule_set = '')
 // Text fields
 function form_group_input($name, $value = '', $label = '', $placeholder = '', $required = FALSE)
 {
+	// get previous form values from flashdata (e.g. when there is error via valiate_form() function)
+	$CI =& get_instance();
+	$form_fields = $CI->session->flashdata('form_fields');
+
 	$label = empty($label) ? humanize($name) : $label;
 	$placeholder = empty($placeholder) ? $label : $placeholder;
-	$value = empty($value) ? set_value($name) : $value;
+	$value = empty($value) ? $form_fields[$name] : $value;
 	$type = ($name=='email') ? 'email' : 'text';
 	$required = $required ? 'required' : '';
-	
+
 	return "<div class='form-group'>
 		<label for='$name'>$label</label>
 		<input type='text' placeholder='$placeholder' id='$name' name='$name' class='form-control' value='$value' $required>

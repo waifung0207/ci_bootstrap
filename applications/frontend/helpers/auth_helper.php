@@ -34,14 +34,14 @@ function login_user($user)
 	// limited fields to store in session
 	$fields = array('id', 'role', 'username', 'full_name', 'created_at');
 	$user_data = elements($fields, $user);
-	$CI->session->set_userdata('backend_user', $user_data);
+	$CI->session->set_userdata('user', $user_data);
 }
 
 // Get user data from session
 function get_user()
 {
 	$CI =& get_instance();
-	return $CI->session->userdata('backend_user');
+	return $CI->session->userdata('user');
 }
 
 // Partially update user data
@@ -55,14 +55,14 @@ function refresh_user($data)
 	}
 
 	// store updated users to session
-	$CI->session->set_userdata('backend_user', $user);
+	$CI->session->set_userdata('user', $user);
 }
 
 // Destroy user data from session
 function logout_user()
 {
 	$CI =& get_instance();
-	$CI->session->unset_userdata('backend_user');
+	$CI->session->unset_userdata('user');
 }
 
 // Verify login user role(s)
