@@ -5,7 +5,7 @@
 
 	<?php echo form_open(); ?>
 
-		<?php echo form_group_input('first_name', set_value('first_name')); ?>
+		<?php echo form_group_input('first_name'); ?>
 
 		<?php echo form_group_input('last_name'); ?>
 

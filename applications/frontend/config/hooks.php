@@ -10,14 +10,6 @@
 |
 */
 
-// for setting default values
-$hook['post_controller_constructor'][] = array(
-    'class'			=> 'controller',
-    'function'		=> 'setup',
-    'filename'		=> 'controller.php',
-    'filepath'		=> 'hooks'
-);
-
 // for additional viewdata called after controller functions (e.g. add breadcrumb, render output)
 $hook['post_controller'][] = array(
 	'class'			=> 'controller',

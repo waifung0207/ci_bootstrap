@@ -5,6 +5,7 @@ class Controller extends CI_Hooks
 	/**
 	 * Hook: post_controller
 	 */
+	// add extra information to mViewData
 	function add_viewdata()
 	{
 		$CI =& get_instance();
