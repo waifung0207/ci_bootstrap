@@ -26,7 +26,7 @@ class Account extends MY_Controller {
 		{
 			$user_data = elements(['first_name', 'last_name', 'email', 'password'], $this->input->post());
 			$user_data['password'] = hash_pw($user_data['password']);
-			$user_data['activation_code'] = generate_activation_code();
+			$user_data['activation_code'] = generate_unique_code();
 
 			// confirm to create user
 			$user_id = $this->users->insert($user_data);
@@ -49,7 +49,7 @@ class Account extends MY_Controller {
 			}
 
 			// failed
-			set_alert('danger', 'Cannot create user');
+			set_alert('danger', 'Failed to create user.');
 			redirect('signup');
 		}
 	}
@@ -69,30 +69,33 @@ class Account extends MY_Controller {
 				'active'	=> 1
 			]);
 
-			// "remember me"
-			if ( $this->input->post('remember') )
+			if ( !empty($user) )
 			{
-				$this->session->sess_expire_on_close = FALSE;
-				$this->session->sess_update();
-			}
+				// "remember me"
+				if ( $this->input->post('remember') )
+				{
+					$this->session->sess_expire_on_close = FALSE;
+					$this->session->sess_update();
+				}
 
-			// check password
-			if ( verify_pw($password, $user['password']) )
-			{
-				// limited fields to store in session
-				$fields = array('id', 'role', 'first_name', 'last_name', 'created_at');
-				$user_data = elements($fields, $user);
-				login_user($user_data);
+				// check password
+				if ( verify_pw($password, $user['password']) )
+				{
+					// limited fields to store in session
+					$fields = array('id', 'role', 'first_name', 'last_name', 'created_at');
+					$user_data = elements($fields, $user);
+					login_user($user_data);
 
-				// success
-				set_alert('success', 'Login success.');
-				redirect('home');
-				exit;
+					// success
+					set_alert('success', 'Login success.');
+					redirect('home');
+					exit;
+				}
 			}
 
 			// failed
 			$this->session->set_flashdata('form_fields', ['email' => $email]);
-			set_alert('danger', 'Invalid Login');
+			set_alert('danger', 'Invalid Login.');
 			redirect('account/login');
 		}
 	}
@@ -123,7 +126,7 @@ class Account extends MY_Controller {
 		}
 
 		// failed
-		set_alert('danger', 'Invalid Code');
+		set_alert('danger', 'Invalid code.');
 		redirect('account/login');
 	}
 
@@ -132,10 +135,44 @@ class Account extends MY_Controller {
 	{
 		$this->mTitle = "Forgot Password";
 		$this->mViewFile = 'account/forgot_password';
+		$this->mViewData['alert'] = get_alert();
 		
 		if ( validate_form() )
 		{
+			$email = $this->input->post('email');
+			$user = $this->users->get_by([
+				'email'		=> $email,
+				'active'	=> 1
+			]);
 
+			if ( !empty($user) )
+			{
+				// generate unique code
+				$forgot_password_code = generate_unique_code();
+				$this->users->update($user['id'], [
+					'forgot_password_code'	=> $forgot_password_code,
+					'forgot_password_time'	=> date('Y-m-d H:i:s')
+				]);
+
+				// send Reset Password email (make sure config/email.php is properly set first)
+				/*
+				$to_name = $user['first_name'].' '.$user['last_name'];
+				$subject = 'Reset Password';
+				$user['forgot_password_code'] = $forgot_password_code;
+				send_email($user['email'], $to_name, $subject, 'reset_password', $user);
+				*/
+
+				// success
+				set_alert('success', 'A email is sent to you to reset your password.');
+				redirect('account/forgot_password');
+				exit;
+			}
+			else
+			{
+				// failed
+				set_alert('danger', 'No record found.');
+				redirect('account/login');
+			}
 		}
 	}
 
@@ -144,6 +181,41 @@ class Account extends MY_Controller {
 	{
 		$this->mTitle = "Reset Password";
 		$this->mViewFile = 'account/reset_password';
+
+		// TODO: check Forgot Password time
+		$user = $this->users->get_by([
+			'forgot_password_code' 	=> $code,
+			'active'				=> 1
+		]);
+
+		// invalid Forgot Password code
+		if ( empty($user) )
+		{
+			set_alert('danger', 'Invalid code.');
+			redirect('account/login');
+			exit;
+		}
+
+		// continue form validation
+		if ( validate_form('', 'account/reset_password') )
+		{
+			// change user password
+			$password = $this->input->post('password');
+			$this->users->update($user['id'], [
+				'forgot_password_code'	=> '',
+				'forgot_password_time'	=> '',
+				'password'				=> hash_pw($password)
+			]);
+
+			// (optional) send reset password email
+			//$to_name = $user['first_name'].' '.$user['last_name'];
+			//$subject = 'Your password has been changed';
+			//send_email($user['email'], $to_name, $subject, 'password_changed', $user);
+
+			// success
+			set_alert('success', 'Password successfully changed! Please login your account with your new password.');
+			redirect('account/login');
+		}
 	}
 
 	// Logout

@@ -60,4 +60,18 @@ $config = array(
 		),
 	),
 
+	// Reset Password
+	'account/reset_password' => array(
+		array(
+			'field'		=> 'password',
+			'label'		=> 'Password',
+			'rules'		=> 'required|matches[retype_password]',
+		),
+		array(
+			'field'		=> 'retype_password',
+			'label'		=> 'Retype Password',
+			'rules'		=> 'required',
+		),
+	),
+
 );

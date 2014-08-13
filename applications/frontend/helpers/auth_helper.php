@@ -26,8 +26,8 @@ function verify_pw($plain_pw, $hashed_pw)
 	return password_verify($plain_pw, $hashed_pw);
 }
 
-// Activation code for new users
-function generate_activation_code()
+// Activation / Forgot Password code
+function generate_unique_code()
 {
 	$CI =& get_instance();
 	$CI->load->helper('string');
