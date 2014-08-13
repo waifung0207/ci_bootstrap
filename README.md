@@ -17,11 +17,11 @@ Please note this project will change from time to time (breaking changes is unav
 ### Setup Procedure
 
 1. Git clone this repository to a LAMP / WAMP server
-2. You should be able to visit frontend website (e.g. http://localhost/ci_bootstrap/) without setting up database 
-3. In prior to use backend system, create a MySQL database (e.g. named "ci_bootstrap"), then import data from sql/ci_bootstrap.sql
+3. In prior to use both frontend & backend system, create a MySQL database (e.g. named "ci_bootstrap"), then import data from sql/ci_bootstrap.sql
 4. Update database config file (e.g. under applications/backend/config)
-5. Browse to the backend system page (e.g. http://localhost/ci_bootstrap/backend.php) and login as **admin**/**admin** or **staff**/**staff**
-6. That's it! You should see a fancy dashboard powered by AdminLTE, with some example pages from side menu
+4. Frontend Website can be visited via link like: http://localhost/ci_bootstrap/
+5. Backend System can be visited via link like: http://localhost/ci_bootstrap/backend.php; and login as **admin**/**admin** or **staff**/**staff**
+6. That's it! You should see a fancy membership-enabled frontend, as well as an AdminLTE dashboard from backend
 
 
 ### Helpers
