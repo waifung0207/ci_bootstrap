@@ -7,6 +7,8 @@
 
 		<?php echo form_group_input('email'); ?>
 
+		<hr/>
+
 		<?php echo form_submit('Reset Password'); ?>
 
 	<?php echo form_close(); ?>

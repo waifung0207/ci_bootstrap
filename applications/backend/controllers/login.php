@@ -23,8 +23,13 @@ class Login extends CI_Controller {
 				// password correct
 				if ( verify_pw($password, $user['password']) )
 				{
-					// success
+					// limited fields to store in session
+					$fields = array('id', 'role', 'username', 'full_name', 'created_at');
+					$user_data = elements($fields, $user);					
 					login_user($user);
+
+					// success
+					set_alert('success', 'Login success');
 					redirect('home');
 					exit;
 				}

@@ -25,9 +25,12 @@ class MY_Controller extends CI_Controller
 
 		// default values for page output
 		$this->mLayout = "default";
-
+		
 		// side menu items
-		$this->config->load('menu');
+		if ( empty($this->mUser) )
+			$this->config->load('menu_visitor');
+		else
+			$this->config->load('menu');
 		$this->mMenu = $this->config->item('menu');
 
 		// breadcrumb entries

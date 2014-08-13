@@ -26,15 +26,19 @@ function verify_pw($plain_pw, $hashed_pw)
 	return password_verify($plain_pw, $hashed_pw);
 }
 
+// Activation code for new users
+function generate_activation_code()
+{
+	$CI =& get_instance();
+	$CI->load->helper('string');
+	return random_string('unique');
+}
+
 // Store user data to session
 function login_user($user)
 {
 	$CI =& get_instance();
-
-	// limited fields to store in session
-	$fields = array('id', 'role', 'username', 'full_name', 'created_at');
-	$user_data = elements($fields, $user);
-	$CI->session->set_userdata('user', $user_data);
+	$CI->session->set_userdata('user', $user);
 }
 
 // Get user data from session

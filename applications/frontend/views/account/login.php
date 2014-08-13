@@ -18,6 +18,8 @@
 			</div>
 		</div>
 
+		<hr/>
+
 		<div class='form-group text-center'>
 			Don't have Account? <a href='<?php echo site_url('account/signup'); ?>'>Sign Up</a>
 		</div>

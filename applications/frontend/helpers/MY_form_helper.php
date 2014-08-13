@@ -54,7 +54,7 @@ function form_group_input($name, $value = '', $label = '', $placeholder = '', $r
 
 	return "<div class='form-group'>
 		<label for='$name'>$label</label>
-		<input type='text' placeholder='$placeholder' id='$name' name='$name' class='form-control' value='$value' $required>
+		<input type='$type' placeholder='$placeholder' id='$name' name='$name' class='form-control' value='$value' $required>
 	</div>";
 }
 

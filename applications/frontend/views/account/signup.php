@@ -17,6 +17,8 @@
 
 		<p>By signing up, you agree to our <a href="#">Terms of Use.</a></p>
 
+		<hr/>
+		
 		<div class='form-group text-center'>
 			Have an Account? <a href='<?php echo site_url('account/login'); ?>'>Log In</a>
 		</div>

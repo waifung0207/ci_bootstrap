@@ -14,6 +14,7 @@
 
     <div class="navbar-collapse collapse">
       <?php $this->load->view('_partial/menu'); ?>
+      <?php $this->load->view('_partial/menu_right'); ?>
     </div>
 
   </div>

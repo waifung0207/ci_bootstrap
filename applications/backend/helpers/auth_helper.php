@@ -30,11 +30,7 @@ function verify_pw($plain_pw, $hashed_pw)
 function login_user($user)
 {
 	$CI =& get_instance();
-
-	// limited fields to store in session
-	$fields = array('id', 'role', 'username', 'full_name', 'created_at');
-	$user_data = elements($fields, $user);
-	$CI->session->set_userdata('backend_user', $user_data);
+	$CI->session->set_userdata('backend_user', $user);
 }
 
 // Get user data from session
