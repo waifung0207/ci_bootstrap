@@ -5,6 +5,7 @@ A starter template that supports multi-tenant (frontend / backend) website in a 
 This repository is developed upon the following tools: 
 * [CodeIgniter](http://ellislab.com/codeigniter) (v2.2.0) - PHP framework
 * [Bootstrap](http://getbootstrap.com/) (v3.2.0) - popular frontend framework
+* [Bootswatch](http://bootswatch.com/) (v3.2.0) - theme options capatible to Bootstrap framework
 * [Grocery CRUD](http://www.grocerycrud.com/) (v1.4.1) - feature-rich library to build CRUD tables
 * [Image CRUD](http://www.grocerycrud.com/image-crud) (v0.6) - CRUD library for image management
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE) (v1.3) - bootstrap theme for backend system
@@ -61,9 +62,10 @@ Website screenshots can be checked from [screenshots folder](https://github.com/
 Project changelog is recorded down in the [changelog.txt file](https://github.com/waifung0207/ci_bootstrap/blob/master/changelog.txt).
 
 
-### Roadmap
+### TODO
 
 * Add example of using Image CRUD
+* 404 pages for both frontend / website
 * Basic membership workflow (e.g. register, login, forgot password) on frontend system
 * Multilingual support
 * More helpers to enhance code reusability

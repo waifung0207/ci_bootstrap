@@ -16,6 +16,24 @@ $config['menu'] = array(
 		'icon'      => ICON_HOME
 	),
 
+	'signup' => array(
+		'name'      => 'Sign Up',
+		'url'       => site_url('account/signup'),
+		'icon'      => 'fa fa-plus-square',
+	),
+
+	'login' => array(
+		'name'      => 'Login',
+		'url'       => site_url('account/login'),
+		'icon'      => 'fa fa-sign-in',
+	),
+
+	'logout' => array(
+		'name'      => 'Logout',
+		'url'       => site_url('account/logout'),
+		'icon'      => 'fa fa-sign-out',
+	),
+
 	// Example to add sections with subpages
 	'example' => array(
 		'name'      => 'Examples',

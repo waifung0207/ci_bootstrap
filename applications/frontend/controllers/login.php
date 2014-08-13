@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->mLayout = "empty";
-		$this->load->view('login', $this->mViewData);
+		$this->mViewFile = 'login';
 	}
 
 	// Submission of Login Form
@@ -16,6 +16,3 @@ class Login extends CI_Controller {
 		redirect('home');
 	}
 }
-
-/* End of file login.php */
-/* Location: ./application/controllers/login.php */

@@ -4,10 +4,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->mLayout = "home";
 		$this->mTitle = "Home";
 		$this->mViewFile = 'home';
 	}
 }
-
-/* End of file home.php */
-/* Location: ./application/controllers/home.php */

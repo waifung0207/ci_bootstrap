@@ -4,10 +4,6 @@
 
 		<?php $this->load->view('_partial/header'); ?>
 
-		<div class="page-header">
-			<h1>{title}</h1>
-		</div>
-
 		{body}
 
 		<hr>

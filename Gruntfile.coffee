@@ -97,10 +97,11 @@ module.exports = (grunt) ->
         files: 
           'assets/dist/app.min.css': [
             # bower files
-            dir_bower + 'bootstrap/dist/css/bootstrap.min.css'
+            #dir_bower + 'bootstrap/dist/css/bootstrap.min.css'   # bootstrap original
+            dir_bower + 'bootswatch/darkly/bootstrap.min.css'      # choose from bootswatch theme
             dir_bower + 'font-awesome/css/font-awesome.min.css'
             # (optional) custom files
-            #dir_css + 'base.css'
+            dir_css + 'frontend.css'
           ]
       # cssmin:backend
       backend:
