@@ -54,7 +54,9 @@ Afterwards, change directory from your terminal to where you cloned the reposito
 
 ### Screenshots
 
-The website screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
+![](screenshots/backend_login.png =250x)
+
+All screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
 
 
 ### Changelog
