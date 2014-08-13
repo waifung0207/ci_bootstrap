@@ -3,10 +3,10 @@
 	<div class="container">
 
 		<?php $this->load->view('_partial/header'); ?>
+		
+		<div class="page-header"></div>
 
 		{body}
-
-		<hr>
 		
 	</div>
 

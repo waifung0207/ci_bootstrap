@@ -64,7 +64,15 @@ $autoload['libraries'] = array('session');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'language');
+$autoload['helper'] = array(
+
+	// CodeIgniter helpers
+	'url', 'html', 'form', 'inflector', 'array',
+
+	// CI Bootstrap helpers
+	'alert', 'auth',
+	
+);
 
 
 /*

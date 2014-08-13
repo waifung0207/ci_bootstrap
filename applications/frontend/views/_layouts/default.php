@@ -9,8 +9,6 @@
 		</div>
 
 		{body}
-
-		<hr>
 		
 	</div>
 

@@ -14,9 +14,16 @@ class Account extends CI_Controller {
 		$this->mViewFile = 'account/login';
 	}
 
+	public function forgot_password()
+	{
+		$this->mTitle = "Forgot Password";
+		$this->mViewFile = 'account/forgot_password';
+	}
+
 	public function logout()
 	{
-		$this->mTitle = "Home";
-		$this->mViewFile = 'home';
+		set_alert('success', 'Successfully logout.');
+		redirect('account/login');
+		exit;
 	}
 }
