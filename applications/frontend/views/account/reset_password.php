@@ -1,5 +1,5 @@
 
-<div class="well bs-component col-md-6">
+<div class="well col-md-6">
 
 	<?php echo alert_box(); ?>
 	

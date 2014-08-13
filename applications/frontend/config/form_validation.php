@@ -74,4 +74,42 @@ $config = array(
 		),
 	),
 
+	// Update Info
+	'account/update_info' => array(
+		array(
+			'field'		=> 'first_name',
+			'label'		=> 'First Name',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'last_name',
+			'label'		=> 'Last Name',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'email',
+			'label'		=> 'Email',
+			'rules'		=> 'required|valid_email',
+		),
+	),
+
+	// Change Password
+	'account/change_password' => array(
+		array(
+			'field'		=> 'current_password',
+			'label'		=> 'Current Password',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'new_password',
+			'label'		=> 'New Password',
+			'rules'		=> 'required|matches[retype_password]',
+		),
+		array(
+			'field'		=> 'retype_password',
+			'label'		=> 'Retype Password',
+			'rules'		=> 'required',
+		),
+	),
+
 );

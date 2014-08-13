@@ -82,7 +82,7 @@ class Account extends MY_Controller {
 				if ( verify_pw($password, $user['password']) )
 				{
 					// limited fields to store in session
-					$fields = array('id', 'role', 'first_name', 'last_name', 'created_at');
+					$fields = array('id', 'role', 'first_name', 'last_name', 'email', 'created_at');
 					$user_data = elements($fields, $user);
 					login_user($user_data);
 
@@ -207,15 +207,82 @@ class Account extends MY_Controller {
 				'password'				=> hash_pw($password)
 			]);
 
-			// (optional) send reset password email
+			// (optional) send Password Changed email
 			//$to_name = $user['first_name'].' '.$user['last_name'];
-			//$subject = 'Your password has been changed';
+			//$subject = 'Password Changed';
 			//send_email($user['email'], $to_name, $subject, 'password_changed', $user);
 
 			// success
 			set_alert('success', 'Password successfully changed! Please login your account with your new password.');
 			redirect('account/login');
 		}
+	}
+
+	// Update Info (submission from Account Settings page)
+	public function update_info()
+	{
+		if ( validate_form('account') )
+		{
+			// check POST data
+			$update_data = elements(['first_name', 'last_name', 'email'], $this->input->post());
+
+			// check if email is unique (except the login user him/herself)
+			$user = $this->users->get_by(['email' => $update_data['email']]);
+			if ( !empty($user) && $user['id']!=$this->mUser['id'] )
+			{
+				set_alert('danger', 'The Email is taken by another user.');
+				redirect('account');
+				exit;
+			}
+
+			// confirm to update account info
+			$success = $this->users->update($this->mUser['id'], $update_data);
+			if ($success)
+			{
+				set_alert('success', 'Successfully updated.');
+				refresh_user($update_data);
+			}
+			else
+			{
+				set_alert('danger', 'Database error.');
+			}
+		}
+
+		redirect('account');
+	}
+
+	// Change Password (submission from Account Settings page)
+	public function change_password()
+	{
+		if ( validate_form('account') )
+		{
+			// check if current password match the record
+			$user = $this->users->get($this->mUser['id']);
+			$current_password = $this->input->post('current_password');
+
+			if ( verify_pw($current_password, $user['password']) )
+			{
+				// change user password
+				$new_password = $this->input->post('new_password');
+				$success = $this->users->update($this->mUser['id'], ['password' => hash_pw($new_password)]);
+
+				// (optional) send Password Changed email
+				//$to_name = $user['first_name'].' '.$user['last_name'];
+				//$subject = 'Password Changed';
+				//send_email($user['email'], $to_name, $subject, 'password_changed', $user);
+
+				if ($success)
+					set_alert('success', 'Password changed successfully.');
+				else
+					set_alert('danger', 'Database error.');
+			}
+			else
+			{
+				set_alert('danger', 'Incorrect current password.');
+			}
+		}
+
+		redirect('account');
 	}
 
 	// Logout

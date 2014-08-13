@@ -48,7 +48,7 @@ function get_user()
 	return $CI->session->userdata('user');
 }
 
-// Partially update user data
+// Partially update user data in current session
 function refresh_user($data)
 {
 	$CI =& get_instance();

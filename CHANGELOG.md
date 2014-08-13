@@ -5,6 +5,7 @@
 	- Use Bootswatch theme instead of original Bootstrap styling
 	- Basic workflow and layout for user Login / Sign Up / Activate / Logout
 	- Basic workflow for Forgot Password / Reset Password
+	- Added feature to Update Info / Change Password for login user
 	- Show different menu for visitors, or login users
 	- Includes some helpers (e.g. email, form validation) which come from Backend System
 

@@ -52,11 +52,6 @@ Afterwards, change directory from your terminal to where you cloned the reposito
 4. After all you will find the post-processed files under the **"assets/dist"** folder, means you have successfully configured it :)
 
 
-### Screenshots
-
-Website screenshots can be checked from [screenshots folder](https://github.com/waifung0207/ci_bootstrap/tree/master/screenshots) under this repository.
-
-
 ### Changelog
 
 Project changelog is recorded down in the [CHANGELOG file](https://github.com/waifung0207/ci_bootstrap/blob/master/CHANGELOG.md).
@@ -66,7 +61,6 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 
 * Add example of using Image CRUD
 * 404 pages for both frontend / website
-* Basic membership workflow (e.g. register, login, forgot password) on frontend system
 * Multilingual support
 * More helpers to enhance code reusability
 * Better documentation
