@@ -59,7 +59,7 @@ Website screenshots can be checked from [screenshots folder](https://github.com/
 
 ### Changelog
 
-Project changelog is recorded down in the [CHANGELOG file](https://github.com/waifung0207/ci_bootstrap/blob/master/changelog.md).
+Project changelog is recorded down in the [CHANGELOG file](https://github.com/waifung0207/ci_bootstrap/blob/master/CHANGELOG.md).
 
 
 ### TODO
