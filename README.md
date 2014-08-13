@@ -56,7 +56,7 @@ Afterwards, change directory from your terminal to where you cloned the reposito
 
 Frontend - Sign Up: 
 
-![](screenshots/frontend_sign.png "Frontend Sign Up")
+![](screenshots/frontend_signup.png "Frontend Sign Up")
 
 Backend - Home: 
 
