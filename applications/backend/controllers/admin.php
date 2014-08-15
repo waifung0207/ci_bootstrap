@@ -17,6 +17,11 @@ class Admin extends MY_Controller {
 		$this->load->model('Backend_user_model', 'backend_users');
 	}
 
+	public function index()
+	{
+		redirect('admin/backend_user');
+	}
+
 	/**
 	 * Backend users
 	 */

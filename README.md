@@ -17,8 +17,8 @@ Please note this project will change from time to time (breaking changes is unav
 ### Setup Procedure
 
 1. Git clone this repository to a LAMP / WAMP server
-3. In prior to use both frontend & backend system, create a MySQL database (e.g. named "ci_bootstrap"), then import data from sql/ci_bootstrap.sql
-4. Update database config file (e.g. under applications/backend/config)
+2. In prior to use both frontend & backend system, create a MySQL database (e.g. named "ci_bootstrap"), then import data from sql/ci_bootstrap.sql
+3. Update database config file (e.g. under applications/backend/config)
 4. Frontend Website can be visited via link like: http://localhost/ci_bootstrap/
 5. Backend System can be visited via link like: http://localhost/ci_bootstrap/backend.php; and login as **admin**/**admin** or **staff**/**staff**
 6. That's it! You should see a fancy membership-enabled frontend, as well as an AdminLTE dashboard from backend
@@ -73,7 +73,6 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 ### TODO
 
 * Add example of using Image CRUD
-* 404 pages for both frontend / website
 * Multilingual support
 * More helpers to enhance code reusability
 * Better documentation

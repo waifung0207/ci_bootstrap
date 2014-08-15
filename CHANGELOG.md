@@ -1,5 +1,11 @@
 
-#### v 0.4 (Date: 2014-08-14)
+#### v 0.4.1 (Date: 2014-08-15)
+- **Frontend**
+	- Added 404 Error page
+- **Backend**
+	- Added 404 Error page
+
+#### v 0.4.0 (Date: 2014-08-14)
 
 - **Frontend**
 	- Use Bootswatch theme instead of original Bootstrap styling
@@ -13,7 +19,7 @@
 - **General**
 	- Updated screenshots
 
-#### v 0.3 (Date: 2014-08-11)
+#### v 0.3.0 (Date: 2014-08-11)
 - **Backend**
 	- Linked with MySQL database for backend user login (table name: "")
 	- Added sql folder with MySQL data structure
