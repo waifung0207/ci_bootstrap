@@ -1,4 +1,8 @@
 
+#### v 0.5.0 (Date: 2014-11-04)
+- **General**
+	- Switch to gulp from grunt
+
 #### v 0.4.1 (Date: 2014-08-15)
 - **Frontend**
 	- Added 404 Error page

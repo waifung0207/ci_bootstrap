@@ -38,17 +38,17 @@ Some useful helpers are created for better code reuse throught the project; any 
 
 ### Asset Customization (e.g. additional js/css files)
 
-A grunt file (**Gruntfile.coffee**) is prepared for asset pipeline. To make use of it, you need to pre-install the following tools before building the template:
+A gulp file (**gulpfile.js**) is prepared for asset pipeline. To make use of it, you need to pre-install the following tools before building the template:
 
 * [node.js](http://nodejs.org/): which includes a package manager (npm) for node modules
 * [bower](http://bower.io/): package manager for bower components (to handle third-party assets)
-* [grunt](http://gruntjs.com/): task runner for lots of purposes, e.g. compile, combine and minify scripts
+* [gulp](http://gulpjs.com/): task runner for lots of purposes, e.g. compile, combine and minify scripts
 
 Afterwards, change directory from your terminal to where you cloned the repository.
 
 1. Update **bower.json** then call bower to download third-party packages: ```bower install```
-2. Update **package.json** then install grunt packages: ```npm install```
-3. Update **Gruntfile.coffee** (which is written in CoffeeScript), then use grunt command to start preset tasks: ```grunt```
+2. Update **package.json** then install gulp packages: ```npm install```
+3. Update **gulpfile.js** (which is written in CoffeeScript), then use gulp command to start preset tasks: ```gulp```
 4. After all you will find the post-processed files under the **"assets/dist"** folder, means you have successfully configured it :)
 
 

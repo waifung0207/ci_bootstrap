@@ -19,9 +19,18 @@ class Controller extends CI_Hooks
 			{
 				// take controller or action name as title
 				if ($CI->mAction=='index')
-					$CI->mTitle = ucfirst($CI->mCtrler);
+					$CI->mTitle = humanize($CI->mCtrler);
 				else
-					$CI->mTitle = ucfirst($CI->mAction);
+					$CI->mTitle = humanize($CI->mAction);
+			}
+
+			// fallback when mViewFile is not set
+			if ( empty($CI->mViewFile) )
+			{
+				if ($CI->mAction=='index')
+					$CI->mViewFile = $CI->mCtrler;
+				else
+					$CI->mViewFile = $CI->mCtrler.'/'.$CI->mAction;
 			}
 
 			if ($ctrler!='home')
