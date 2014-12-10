@@ -16,7 +16,7 @@ Please note this project will change from time to time (breaking changes is unav
 
 ### Server Requirements (Preferred)
 
-* PHP 5.5+ (mainly for [password_hash()](http://php.net/manual/en/function.password-hash.php) and [password_verify()](http://php.net/manual/en/function.password-verify.php) functions as used from auth_helper.php); see [issue #2](https://github.com/waifung0207/ci_bootstrap/issues/2) for alternative method
+* PHP 5.5+ (mainly for [password_hash()](http://php.net/manual/en/function.password-hash.php) and [password_verify()](http://php.net/manual/en/function.password-verify.php) functions as used from auth_helper); otherwise see [issue #2](https://github.com/waifung0207/ci_bootstrap/issues/2) for alternative method but minimum PHP version will still be 5.4+, due to my usage of [shortcut syntax](http://php.net/manual/en/migration54.new-features.php) throughout the repository
 * Apache 2.2+ with rewrite mod enabled
 * MySQL 5.5+
 
