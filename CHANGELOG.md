@@ -1,4 +1,8 @@
 
+#### v 0.5.1 (Date: 2014-12-09)
+- **General**
+	- Upgrade Grocery CRUD to v1.5.0
+
 #### v 0.5.0 (Date: 2014-11-04)
 - **General**
 	- Switch to gulp from grunt
@@ -45,7 +49,7 @@
 
 #### v 0.2.1 (Date: 2014-08-02)
 - **Backend**
-	- Switch to jquery legacy version for better Grocery Crud support
+	- Switch to jquery legacy version for better Grocery CRUD support
 	- Added alert helper to work with setting / showing alert box more easily
 
 #### v 0.2.0 (Date: 2014-04-15)
@@ -71,4 +75,4 @@
 - **General**
 	- Basic frontend / backend structure
 	- Preset layout for different pages
-	- Add GroceryCRUD for handling backend opertations
+	- Add Grocery CRUD for handling backend opertations
