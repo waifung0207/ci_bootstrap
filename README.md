@@ -3,15 +3,22 @@
 A starter template that supports multi-tenant (frontend / backend) website in a single application.
 
 This repository is developed upon the following tools: 
-* [CodeIgniter](http://ellislab.com/codeigniter) (v2.2.0) - PHP framework
-* [Bootstrap](http://getbootstrap.com/) (v3.2.0) - popular frontend framework
-* [Bootswatch](http://bootswatch.com/) (v3.2.0) - theme options capatible to Bootstrap framework
-* [Grocery CRUD](http://www.grocerycrud.com/) (v1.4.1) - feature-rich library to build CRUD tables
+* [CodeIgniter](http://www.codeigniter.com/) (v2.2.0) - PHP framework
+* [Bootstrap](http://getbootstrap.com/) (v3.3.1) - popular frontend framework
+* [Bootswatch](http://bootswatch.com/) (v3.3.1) - theme options capatible to Bootstrap framework
+* [Grocery CRUD](http://www.grocerycrud.com/) (v1.5.0) - feature-rich library to build CRUD tables
 * [Image CRUD](http://www.grocerycrud.com/image-crud) (v0.6) - CRUD library for image management
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE) (v1.3) - bootstrap theme for backend system
 * [codeigniter-base-model](https://github.com/jamierumbelow/codeigniter-base-model) - MY_Model implementation for easier database handling 
 
-Please note this project will change from time to time (breaking changes is unavoidable among commits by now), but should works fine at production (e.g. in my personal jobs). 
+Please note this project will change from time to time (breaking changes is unavoidable among commits by now), but should works fine at production (at least in my personal jobs). 
+
+
+### Server Requirements (Preferred)
+
+* PHP 5.5+ (mainly for [password_hash()](http://php.net/manual/en/function.password-hash.php) and [password_verify()](http://php.net/manual/en/function.password-verify.php) functions as used from auth_helper.php); see [issue #2](https://github.com/waifung0207/ci_bootstrap/issues/2) for alternative method
+* Apache 2.2+ with rewrite mod enabled
+* MySQL 5.5+
 
 
 ### Setup Procedure
@@ -76,3 +83,4 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 * Multilingual support
 * More helpers to enhance code reusability
 * Better documentation
+* API site
