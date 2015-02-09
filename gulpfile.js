@@ -29,22 +29,24 @@ var paths = {
 	// Raw assets to copy directly
 	copy: {
 		fonts: [
-			folders.bower + 'AdminLTE/fonts/**'
+			folders.bower + 'AdminLTE/fonts/**',
+			folders.bower + 'font-awesome/fonts/**',
+			folders.bower + 'ionicons/fonts/**',
 		],
 		scripts: [
 			folders.bower + 'jquery/dist/jquery.min.js',
 			folders.bower + 'jquery-migrate/jquery-migrate.min.js',
 			//folders.bower + 'jquery-legacy/jquery.min.js',
 			//folders.bower + 'jquery-legacy/jquery.migrate.min.js',
-		],
+		]
 	},
 
 	// Frontend specific
 	frontend: {
 		js: [
-			//folders.bower + 'jquery/dist/jquery.min.js',
-			//folders.bower + 'jquery-migrate/jquery-migrate.min.js',
-			folders.bower + 'jquery-legacy/jquery.min.js',
+			// use latest jQuery (2.x) with migrate library
+			folders.bower + 'jquery/dist/jquery.js',
+			folders.bower + 'jquery-migrate/jquery-migrate.js',
 			folders.bower + 'bootstrap/dist/js/bootstrap.min.js',
 
 			// (optional) custom files
@@ -65,19 +67,20 @@ var paths = {
 	 */
 	backend: {
 		js: [
-			folders.bower + 'jquery-legacy/jquery.min.js',
-			folders.bower + 'jquery-legacy/jquery-migrate.min.js',
-			folders.bower + 'AdminLTE/js/bootstrap.min.js',
-			folders.bower + 'AdminLTE/js/jquery-ui-1.10.3.min.js',
+			// use jQuery 1.x to compatible with GroceryCRUD
+			folders.bower + 'jquery-legacy/dist/jquery.js',
+			folders.bower + 'jquery-migrate/jquery-migrate.js',
+			folders.bower + 'bootstrap/dist/js/bootstrap.min.js',
+			folders.bower + 'AdminLTE/js/AdminLTE/app.js',
 			folders.js + 'backend.js',
 		],
 		css: [
-			folders.bower + 'AdminLTE/css/bootstrap.min.css',
-			folders.bower + 'AdminLTE/css/font-awesome.min.css',
+			folders.bower + 'bootstrap/dist/css/bootstrap.min.css',
+			folders.bower + 'font-awesome/css/font-awesome.min.css',
+			folders.bower + 'ionicons/css/ionicons.min.css',
 			folders.bower + 'AdminLTE/css/AdminLTE.css',
 
 			// (optional) AdminLTE theme plugins
-			//folders.bower + 'AdminLTE/css/ionicons.min.css',
 			//folders.bower + 'AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
 			
 			// (optional) custom files

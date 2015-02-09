@@ -1,6 +1,6 @@
 {
 	"name": "ci_bootstrap",
-	"version": "0.5.0",
+	"version": "0.5.2",
 	"description": "Website starter template with CodeIgniter, Bootstrap and GroceryCrud",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

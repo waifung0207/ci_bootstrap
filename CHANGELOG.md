@@ -1,7 +1,13 @@
 
+#### v 0.5.2 (Date: 2015-02-09)
+- **General**
+	- Upgraded CodeIgniter to v2.2.1
+	- Upgraded AdminLTE to v1.3.1
+	- Added Ionicons v2.0.1
+
 #### v 0.5.1 (Date: 2014-12-09)
 - **General**
-	- Upgrade Grocery CRUD to v1.5.0
+	- Upgraded Grocery CRUD to v1.5.0
 
 #### v 0.5.0 (Date: 2014-11-04)
 - **General**
