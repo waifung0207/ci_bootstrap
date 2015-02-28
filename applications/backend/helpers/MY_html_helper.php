@@ -76,6 +76,21 @@ function small_box($color, $number, $label, $icon, $url = '')
 	</div>";
 }
 
+function info_box($color, $number, $label, $icon, $url = '')
+{
+	$href = empty($url) ? '#' : site_url($url);
+	
+	return "<div class='info-box'>
+		<a href='$href'>
+			<span class='info-box-icon bg-$color'><i class='fa fa-$icon'></i></span>
+		</a>
+		<div class='info-box-content'>
+			<span class='info-box-text'>$label</span>
+			<span class='info-box-number'>$number</span>
+		</div>
+	</div>";
+}
+
 function app_btn($icon, $label, $url = '', $badge = '', $badge_color = 'purple')
 {
 	$href = empty($url) ? '#' : site_url($url);

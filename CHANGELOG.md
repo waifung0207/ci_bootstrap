@@ -1,4 +1,14 @@
 
+#### v 0.6.0 (Date: 2015-02-28)
+- **Backend**
+	- Upgraded AdminLTE to v2.0.2
+	- Refactor files to fit with new version of AdminLTE, includes:
+		- layouts and views
+		- gulpfile.js
+		- assets/js/backend.js (removed all code since not required from AdminLTE anymore)
+	- Added info_box() function in HTML helper
+	- Placed some constants info config.php (e.g. THEME_ADMIN, THEME_STAFF)
+
 #### v 0.5.2 (Date: 2015-02-09)
 - **General**
 	- Upgraded CodeIgniter to v2.2.1

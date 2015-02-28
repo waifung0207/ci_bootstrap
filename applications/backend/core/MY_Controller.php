@@ -32,7 +32,7 @@ class MY_Controller extends CI_Controller
 		$this->mLayout = "default";
 
 		// switch theme by login user roles
-		$this->mTheme = verify_role('admin') ? 'skin-black' : 'skin-blue';
+		$this->mTheme = verify_role('admin') ? THEME_ADMIN : THEME_STAFF;
 
 		// side menu items
 		$this->config->load('menu_'.$this->mUser['role']);

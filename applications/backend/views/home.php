@@ -19,12 +19,12 @@
 
 	<?php if ($user['role']=='admin') { ?>
 	<div class="col-md-4">
-		<?php echo small_box('aqua', 2, 'Backend Users', 'users', 'admin/backend_user'); ?>
+		<?php echo info_box('aqua', 2, 'Backend Users', 'users', 'admin/backend_user'); ?>
 	</div>
 	<?php } ?>
 
 	<div class="col-md-4">
-		<?php echo small_box('yellow', 0, 'Frontend Users', 'users', 'user'); ?>
+		<?php echo info_box('yellow', 0, 'Frontend Users', 'users', 'user'); ?>
 	</div>
 
 </div>

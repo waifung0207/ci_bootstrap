@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->mLayout = "empty";
-		$this->mTheme = 'bg-black';
+		$this->mTheme = 'login-page';
 		$this->mViewFile = 'login';
 		
 		if ( validate_form() )

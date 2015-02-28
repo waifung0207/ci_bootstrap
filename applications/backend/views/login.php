@@ -1,27 +1,28 @@
 
-<div class="form-box" id="login-box">
-	<div class="header">Sign In</div>
-	<form action="<?php echo site_url('login'); ?>" method="post">
-		<div class="body bg-gray">
-			<?php echo alert_box(); ?>
-			<div class="form-group">
-				<input type="text" name="username" class="form-control" placeholder="Username" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
-			</div>
-			<div class="form-group">
-				<input type="password" name="password" class="form-control" placeholder="Password" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
-			</div>
-		</div>
-		<div class="footer">
-			<button type="submit" class="btn bg-olive btn-block">Sign me in</button>
-		</div>
-		<hr>
-	</form>
-</div>
+<div class="login-box">
 
-<footer>
-	<div class="container">
-		<div class="col-lg-12 small text-muted text-center">
-			<p>Copyright &copy; 2014</p>
-		</div>
+	<div class="login-logo"><b>Backend System</b></div>
+
+	<div class="login-box-body">
+		<?php echo alert_box(); ?>
+		<p class="login-box-msg">Sign in to start your session</p>
+		<form action="<?php echo site_url('login'); ?>" method="POST">
+			<div class="form-group has-feedback">
+				<input type="text" class="form-control" name="username" placeholder="Username" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
+			</div>
+			<div class="form-group has-feedback">
+				<input type="password" class="form-control" name="password" placeholder="Password" value="<?php if (ENVIRONMENT=='development') echo 'admin'; ?>" />
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
+					<!--<label><input type="checkbox" name="remember_me"> Remember Me</label>-->
+				</div>
+				<div class="col-xs-4">
+					<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+				</div>
+			</div>
+		</form>
+
 	</div>
-</footer>
+
+</div>

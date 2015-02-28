@@ -12,7 +12,7 @@ class Layout extends CI_Hooks
 
         if ( isset($CI->mLayout) )
         {
-            // load layout (APPPATH = "applications/frontend/")
+            // load layout (APPPATH = "applications/backend/")
             $layout_name = $CI->mLayout;
             $layout_path = BASEPATH . '../'.APPPATH.'views/_layouts/'.$layout_name.'.php';
             $layout = $CI->load->file($layout_path, true);

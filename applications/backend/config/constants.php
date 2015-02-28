@@ -42,7 +42,10 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 | Custom constants
 |--------------------------------------------------------------------------
 */
-//define('DEFAULT_THEME',			'skin-blue');
+define('THEME_ADMIN',			'skin-purple');
+define('THEME_STAFF',			'skin-blue');
+define('COMPANY_NAME',			'My Company');
+define('WEBSITE_VERSION',		'0.0.1');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

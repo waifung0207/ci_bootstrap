@@ -29,62 +29,69 @@ var paths = {
 	// Raw assets to copy directly
 	copy: {
 		fonts: [
-			folders.bower + 'AdminLTE/fonts/**',
+			folders.bower + 'bootstrap/fonts/**',
 			folders.bower + 'font-awesome/fonts/**',
 			folders.bower + 'ionicons/fonts/**',
 		],
 		scripts: [
-			folders.bower + 'jquery/dist/jquery.min.js',
-			folders.bower + 'jquery-migrate/jquery-migrate.min.js',
 			//folders.bower + 'jquery-legacy/jquery.min.js',
-			//folders.bower + 'jquery-legacy/jquery.migrate.min.js',
+			//folders.bower + 'jquery-migrate/jquery-migrate.min.js',
 		]
 	},
 
-	// Frontend specific
+	// Frontend
 	frontend: {
 		js: [
-			// use latest jQuery (2.x) with migrate library
-			folders.bower + 'jquery/dist/jquery.js',
+			// use latest jQuery 1.x with migrate library
+			folders.bower + 'jquery-legacy/dist/jquery.js',
 			folders.bower + 'jquery-migrate/jquery-migrate.js',
 			folders.bower + 'bootstrap/dist/js/bootstrap.min.js',
 
-			// (optional) custom files
-			//folders.js + 'base.js',
+			// (optional) custom scripts
+			folders.js + 'frontend.js',
 		],
 		css: [
-			//folders.bower + 'bootstrap/dist/css/bootstrap.min.css',
-			folders.bower + 'bootswatch/darkly/bootstrap.min.css',
-			folders.bower + 'font-awesome/css/font-awesome.min.css',
+			// switch to other bootswatch theme here, or use default bootstrap theme
+			//folders.bower + 'bootstrap/dist/css/bootstrap.css',
+			folders.bower + 'bootswatch/darkly/bootstrap.css',
+			folders.bower + 'font-awesome/css/font-awesome.css',
 
 			// (optional) custom files
 			folders.css + 'frontend.css',
 		],
 	},
 
-	/**
-	 * Backend-specific
-	 */
+	// Backend
 	backend: {
 		js: [
 			// use jQuery 1.x to compatible with GroceryCRUD
 			folders.bower + 'jquery-legacy/dist/jquery.js',
 			folders.bower + 'jquery-migrate/jquery-migrate.js',
-			folders.bower + 'bootstrap/dist/js/bootstrap.min.js',
-			folders.bower + 'AdminLTE/js/AdminLTE/app.js',
+			folders.bower + 'bootstrap/dist/js/bootstrap.js',
+			folders.bower + 'adminlte/dist/js/app.js',
+			folders.bower + 'adminlte/plugins/fastclick/fastclick.js',
+            folders.bower + 'summernote/dist/summernote.js',
 			folders.js + 'backend.js',
-		],
-		css: [
-			folders.bower + 'bootstrap/dist/css/bootstrap.min.css',
-			folders.bower + 'font-awesome/css/font-awesome.min.css',
-			folders.bower + 'ionicons/css/ionicons.min.css',
-			folders.bower + 'AdminLTE/css/AdminLTE.css',
 
-			// (optional) AdminLTE theme plugins
-			//folders.bower + 'AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
-			
+			// optional plugins
+			//folders.bower + 'adminlte/plugins/iCheck/icheck.min.js',
+		],
+		css: [			
 			// (optional) custom files
 			folders.css + 'backend.css',
+
+			folders.bower + 'bootstrap/dist/css/bootstrap.css',
+			folders.bower + 'font-awesome/css/font-awesome.css',
+			folders.bower + 'ionicons/css/ionicons.css',
+			folders.bower + 'adminlte/dist/css/AdminLTE.css',
+			folders.bower + 'adminlte/dist/css/skins/_all-skins.css',
+            folders.bower + 'summernote/dist/summernote.css',
+
+			// (optional) custom files
+			folders.css + 'backend.css',
+
+			// (optional) other AdminLTE plugins
+			//folders.bower + 'adminlte/plugins/iCheck/all.css',
 		],
 	},
 };
@@ -181,9 +188,11 @@ gulp.task('watch', function() {
 	gulp.watch(paths.images, ['images']);
 });
 
+// Build scripts only
+gulp.task('build', ['scripts', 'cssmin']);
 
-// Build only
-gulp.task('build', ['copy', 'scripts', 'cssmin', 'images']);
+// Clean up and build all
+gulp.task('rebuild', ['clean', 'copy', 'images', 'build']);
 
 // Default tasks
-gulp.task('default', ['clean', 'watch', 'build']);
+gulp.task('default', ['build', 'watch']);
