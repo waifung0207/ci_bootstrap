@@ -1,6 +1,6 @@
 {
   "name": "ci_bootstrap",
-  "version": "0.5.2",
+  "version": "0.6.1",
   "homepage": "https://github.com/waifung0207/ci_bootstrap",
   "authors": [
     "Michael Chan <waifung.hk>"
@@ -21,7 +21,7 @@
     "bootswatch": "~3.3.2",
     "font-awesome": "~4.3.0",
     "ionicons": "~2.0.1",
-    "adminlte": "~2.0.2",
+    "adminlte": "~2.0.4",
     "summernote": "~0.6.1"
   }
 }

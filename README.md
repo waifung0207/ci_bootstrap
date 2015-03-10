@@ -8,7 +8,7 @@ This repository is developed upon the following tools:
 * [Bootswatch](http://bootswatch.com/) (v3.3.2) - theme options capatible to Bootstrap framework
 * [Grocery CRUD](http://www.grocerycrud.com/) (v1.5.0) - feature-rich library to build CRUD tables
 * [Image CRUD](http://www.grocerycrud.com/image-crud) (v0.6) - CRUD library for image management
-* [AdminLTE](https://github.com/almasaeed2010/AdminLTE) (v2.0.2) - bootstrap theme for backend system
+* [AdminLTE](https://github.com/almasaeed2010/AdminLTE) (v2.0.4) - bootstrap theme for backend system
 * [codeigniter-base-model](https://github.com/jamierumbelow/codeigniter-base-model) - MY_Model implementation for easier database handling 
 
 Please note this project will change from time to time (breaking changes is unavoidable among commits by now), but should works fine at production (at least in my personal jobs). 
@@ -69,6 +69,8 @@ Backend - Home:
 
 ![](screenshots/backend_home_admin.png "Backend Home")
 
+**Note**: Current screenshots for Backend System is outdated since the repo has upgraded to latest AdminLTE v2 already.
+
 More screenshots can be viewed from the [screenshots folder](https://github.com/waifung0207/ci_bootstrap/blob/master/screenshots/) under this repository.
 
 
@@ -79,6 +81,7 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 
 ### TODO
 
+* Update screenshots for Backend System
 * Add example of using Image CRUD
 * Multilingual support
 * More helpers to enhance code reusability
