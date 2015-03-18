@@ -81,9 +81,9 @@ Project changelog is recorded down in the [CHANGELOG file](https://github.com/wa
 
 ### TODO
 
-* Update screenshots for Backend System
+* Update screenshots
+* Enhance Gulpfile (e.g. Browser Sync, Sass)
 * Add example of using Image CRUD
-* Multilingual support
 * More helpers to enhance code reusability
 * Better documentation
 * API site

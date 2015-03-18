@@ -14,14 +14,14 @@ class MY_Controller extends CI_Controller
 		
 		// get user data from session
 		$this->mUser = get_user();
+
+		// locale handling
+		$this->setup_locale();
 		
 		// basic URL params
 		$this->mCtrler = $this->router->fetch_class();
 		$this->mAction = $this->router->fetch_method();
 		$this->mParam = $this->uri->segment(3);
-
-		// Use default language if the Backend System only support single locale	
-		$this->mLocale = $this->config->item('language');
 
 		// default values for page output
 		$this->mLayout = "default";
@@ -45,6 +45,34 @@ class MY_Controller extends CI_Controller
 			'user'      => $this->mUser,
 			'menu'		=> $this->mMenu
 		);
+	}
+
+	/**
+	 * Language handling
+	 */
+	protected function setup_locale()
+	{
+		// check locale from session, or default value
+		$locale = $this->session->userdata('locale');
+
+		if ( empty($locale) )
+		{
+			$locale = $this->config->item('language');
+			$this->session->set_userdata('locale', $locale);
+		}
+
+		// load base locale file
+		$this->lang->load('general', $locale);
+
+		/*
+		// Example: load locale file based on current controller
+		if ( file_exists(APPPATH.'language/'.$locale.'/'.$CI->mCtrler.'_lang.php') )
+		{
+		    $CI->lang->load($CI->mCtrler, $locale);    
+		}
+		*/
+
+		$this->mLocale = $locale;
 	}
 
 	/**

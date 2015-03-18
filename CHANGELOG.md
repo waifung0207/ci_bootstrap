@@ -1,4 +1,8 @@
 
+#### v 0.7.0 (Date: 2015-03-18)
+- **Frontend**
+	- Added multilingual support
+
 #### v 0.6.1 (Date: 2015-03-10)
 - **Backend**
 	- Upgraded AdminLTE to v2.0.4

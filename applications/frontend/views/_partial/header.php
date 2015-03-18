@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo site_url(); ?>">My Website</a>
+      <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php echo lang('website_name'); ?></a>
     </div>
 
     <div class="navbar-collapse collapse">

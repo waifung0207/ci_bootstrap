@@ -11,9 +11,9 @@
 $config['menu'] = array(
 
 	'home' => array(
-		'name'      => 'Home',
+		'name'      => lang('home'),
 		'url'       => site_url(),
-		'icon'      => ICON_HOME
+		'icon'      => 'fa fa-home'
 	),
 	
 );
