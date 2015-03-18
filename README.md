@@ -14,6 +14,25 @@ This repository is developed upon the following tools:
 Please note this project will change from time to time (breaking changes is unavoidable among commits by now), but should works fine at production (at least in my personal jobs). 
 
 
+### Features
+
+This repository contains setup for rapid development:
+* Multi-tenant (frontend / backend) website in single application
+* Backend site in AdminLTE v2 theme
+* Backend site with Grocery CRUD integration
+* Backend site with authenication and backend user management
+* Frontend site with basic membership system (sign up, activate, login, forgot password, etc.)
+* Preset layouts and templates
+* Preset asset pipeline (e.g. minify scripts, image optimization) via Gulp
+* Preset MY_Controller and MY_Model classes
+* Menu config from single file
+* Breadcrumb handling
+* Custom 404 error page
+* Preset email layout template
+* Helper classes for enhanced code reuse (see the **Helpers** section)
+* Multilingual support (frontend)
+
+
 ### Server Requirements (Preferred)
 
 * **PHP 5.5+** (mainly for [password_hash()](http://php.net/manual/en/function.password-hash.php) and [password_verify()](http://php.net/manual/en/function.password-verify.php) functions as used from auth_helper); otherwise see [issue #2](https://github.com/waifung0207/ci_bootstrap/issues/2) for alternative method but minimum PHP version will still be **5.4+**, due to my usage of [shortcut syntax](http://php.net/manual/en/migration54.new-features.php) throughout the repository
