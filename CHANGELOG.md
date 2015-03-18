@@ -3,6 +3,7 @@
 - **Frontend**
 	- Added multilingual support
 	- Added config sample for email via Mandrill
+	- Membership system on frontend is now optional (set ENABLED_MEMBERSHIP value from constants.php)
 
 #### v 0.6.1 (Date: 2015-03-10)
 - **Backend**

@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>My Website - {title}</title>
+	<title><?php echo lang('website_name'); ?> - {title}</title>
 	
 	<link href="<?php echo base_url('assets/dist/app.min.css'); ?>" rel="stylesheet">
 	

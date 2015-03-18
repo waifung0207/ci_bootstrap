@@ -45,6 +45,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 | Any custom constants to be placed here.
 |
 */
+define('ENABLED_MEMBERSHIP',			TRUE);
 
 
 /* End of file constants.php */

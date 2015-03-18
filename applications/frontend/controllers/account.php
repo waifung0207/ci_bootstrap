@@ -5,6 +5,12 @@ class Account extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		if (!ENABLED_MEMBERSHIP) {
+			redirect();
+			exit;
+		}
+
 		$this->load->model('User_model', 'users');
 		$this->load->helper('email');
 	}
@@ -15,7 +21,7 @@ class Account extends MY_Controller {
 		$this->mTitle = "Account";
 		$this->mViewFile = 'account/index';
 	}
-
+	
 	// Sign Up
 	public function signup()
 	{

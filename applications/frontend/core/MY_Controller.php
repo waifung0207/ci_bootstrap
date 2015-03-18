@@ -12,12 +12,6 @@ class MY_Controller extends CI_Controller
 	{
 		parent::__construct();
 		
-		// get user data from session
-		$this->mUser = get_user();
-
-		// locale handling
-		$this->setup_locale();
-		
 		// basic URL params
 		$this->mCtrler = $this->router->fetch_class();
 		$this->mAction = $this->router->fetch_method();
@@ -25,15 +19,23 @@ class MY_Controller extends CI_Controller
 
 		// default values for page output
 		$this->mLayout = "default";
-		
-		// side menu items
-		if ( empty($this->mUser) )
-			$this->config->load('menu_visitor');
-		else
-			$this->config->load('menu');
+
+		// locale handling
+		$this->setup_locale();
+
+		// get user data from session
+		if (ENABLED_MEMBERSHIP) {
+			$this->mUser = get_user();
+			$menu = empty($this->mUser) ? 'menu' : 'menu_member';
+		} else {
+			$menu = 'menu';
+		}
+
+		// setup menu
+		$this->config->load($menu);
 		$this->mMenu = $this->config->item('menu');
 
-		// breadcrumb entries
+		// setup breadcrumb
 		$this->mBreadcrumb = array();
 		$this->push_breadcrumb('Home', '', 'home');
 
@@ -42,9 +44,12 @@ class MY_Controller extends CI_Controller
 			'locale'    => $this->mLocale,
 			'ctrler'    => $this->mCtrler,
 			'action'    => $this->mAction,
-			'user'      => $this->mUser,
 			'menu'		=> $this->mMenu
 		);
+
+		if (ENABLED_MEMBERSHIP) {
+			$this->mViewData['user'] = $this->mUser;
+		}
 	}
 
 	/**
@@ -63,7 +68,7 @@ class MY_Controller extends CI_Controller
 
 		// load base locale file
 		$this->lang->load('general', $locale);
-
+		
 		/*
 		// Example: load locale file based on current controller
 		if ( file_exists(APPPATH.'language/'.$locale.'/'.$CI->mCtrler.'_lang.php') )
