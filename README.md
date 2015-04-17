@@ -3,9 +3,10 @@
 
 ### IMPORTANT NOTE
 
-As CodeIgniter has announced version 3 recently and it introduces some major changes in folder structure, I am taking this chance to further enhance my code and make use of new features from the new CI, therefore I will be moving to new repository for next version of CI Bootstrap. 
+As CodeIgniter has announced [version 3](http://forum.codeigniter.com/thread-1657.html) (full changelog [here](http://www.codeigniter.com/userguide3/changelog.html)) recently and it introduces some major changes in folder structure, I am taking this chance to further enhance my code and make use of new features from the new CI, therefore I will be moving to new repository for next version of CI Bootstrap. 
 
-Please stay tuned to [ci_bootstrap_3](https://github.com/waifung0207/ci_bootstrap_3) which is work-in-progress at this moment. 
+Please stay tuned to **ci_bootstrap_3** which is work-in-progress at this moment:
+https://github.com/waifung0207/ci_bootstrap_3
 
 This repository will be slowly depreciated and updated only when CodeIgniter 2 release securify fix. 
 
