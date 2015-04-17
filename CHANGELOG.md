@@ -4,6 +4,7 @@
 	- Updated CodeIgniter to v2.2.2
 	- Updated AdminLTE to v2.0.5
 	- Updated Bootstrap to v3.3.4
+	- Updated Grocery CRUD to v1.5.1
 
 #### v 0.7.0 (Date: 2015-03-18)
 - **Frontend**

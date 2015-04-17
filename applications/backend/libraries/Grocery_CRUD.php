@@ -1383,7 +1383,13 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
 				header('Access-Control-Allow-Headers: X-File-Name, X-File-Type, X-File-Size');
 
 				$allowed_files = $this->config->file_upload_allow_file_types;
-				$reg_exp = '/(\\.|\\/)('.$allowed_files.')$/i';
+				
+		                $reg_exp = '';
+		                if(!empty($upload_info->allowed_file_types)){
+		                    $reg_exp = '/(\\.|\\/)('.$upload_info->allowed_file_types.')$/i';
+		                }else{
+		                    $reg_exp = '/(\\.|\\/)('.$allowed_files.')$/i';
+		                }
 
 				$max_file_size_ui = $this->config->file_upload_max_file_size;
 				$max_file_size_bytes = $this->_convert_bytes_ui_to_bytes($max_file_size_ui);
@@ -2111,10 +2117,12 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		}
 
 		if ($this->unset_bootstrap) {
-			unset($js_files[sha1($this->default_theme_path.'/twitter-bootstrap/js/libs/bootstrap/bootstrap.min.js')]);
-			unset($js_files[sha1($this->default_theme_path.'/twitter-bootstrap/js/libs/bootstrap/application.js')]);
-			unset($css_files[sha1($this->default_theme_path.'/twitter-bootstrap/css/bootstrap-responsive.min.css')]);
-			unset($css_files[sha1($this->default_theme_path.'/twitter-bootstrap/css/bootstrap.min.css')]);
+			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/dropdown.js')]);
+			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/modal.js')]);
+			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/dropdown.min.js')]);
+			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/modal.min.js')]);
+			unset($css_files[sha1($this->default_theme_path.'/bootstrap/css/bootstrap/bootstrap.css')]);
+			unset($css_files[sha1($this->default_theme_path.'/bootstrap/css/bootstrap/bootstrap.min.css')]);
 		}
 
 		if($this->echo_and_die === false)
@@ -3995,8 +4003,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	{
 		list($php_day, $php_month, $php_year) = array('d','m','Y');
 		list($js_day, $js_month, $js_year) = array('dd','mm','yy');
-		list($ui_day, $ui_month, $ui_year) = array('dd','mm','yyyy');
-//@todo ui_day, ui_month, ui_year has to be lang strings
+		list($ui_day, $ui_month, $ui_year) = array($this->l('ui_day'), $this->l('ui_month'), $this->l('ui_year'));
 
 		$date_format = $this->config->date_format;
 		switch ($date_format) {
@@ -5137,7 +5144,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	 * @param string $upload_path
      * @return Grocery_CRUD
 	 */
-	public function set_field_upload($field_name, $upload_dir = '')
+	public function set_field_upload($field_name, $upload_dir = '', $allowed_file_types = '')
 	{
 		$upload_dir = !empty($upload_dir) && substr($upload_dir,-1,1) == '/'
 						? substr($upload_dir,0,-1)
@@ -5153,6 +5160,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 		$this->upload_fields[$field_name] = (object) array(
 				'field_name' => $field_name,
 				'upload_path' => $upload_dir,
+				'allowed_file_types' => $allowed_file_types,
 				'encrypted_field_name' => $this->_unique_field_name($field_name));
 		return $this;
 	}
